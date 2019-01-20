@@ -90,6 +90,13 @@
 .icon-facebook-squared::before {
   content: "\f308";
 } /* '' */
+.icon-left-dir::before {
+  content: "\e80b";
+} /* '' */
+.icon-right-dir::before {
+  content: "\e80c";
+} /* '' */
+
 .icon-menu::before {
   content: "\f0c9";
   font-size: 20px;

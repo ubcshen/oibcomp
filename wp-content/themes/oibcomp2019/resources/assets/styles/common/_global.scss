@@ -605,23 +605,24 @@ h4 {
       right: 5px;
     }
     &::before {
-      content: "\e801";
+      content: "\e80c";
       font-family: "fontello";
       font-style: normal;
       font-weight: normal;
       speak: none;
       display: inline-block;
       text-decoration: inherit;
-      width: 1em;
+      width: 1.25rem;
       margin-right: 0.2em;
       text-align: center;
       font-variant: normal;
       text-transform: none;
       line-height: 1em;
       margin-left: 0.2em;
+      color: #fff;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      @include font-size-sass(50px);
+      @include font-size-sass(60px);
       @include breakpoint(medium1280-down) {
         @include font-size-sass(30px);
       }
@@ -638,23 +639,24 @@ h4 {
     }
   }
   .bx-prev::before {
-    content: "\e802";
+    content: "\e80b";
     font-family: "fontello";
     font-style: normal;
     font-weight: normal;
     speak: none;
     display: inline-block;
     text-decoration: inherit;
-    width: 1em;
+    width: 1.25rem;
     margin-right: 0.2em;
     text-align: center;
     font-variant: normal;
     text-transform: none;
     line-height: 1em;
     margin-left: 0.2em;
+    color: #fff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @include font-size-sass(50px);
+    @include font-size-sass(60px);
     @include breakpoint(medium1280-down) {
       @include font-size-sass(30px);
     }
@@ -1125,4 +1127,21 @@ h3 {
 
 .contactus {
   width: 64%;
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  bottom: 20px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.2);
+  &.active,
+  &:focus,
+  &:hover {
+    background-color: #fff;
+  }
 }

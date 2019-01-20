@@ -300,7 +300,7 @@ function build_sections()
                 $contentAlignement = get_sub_field("text_alignment");
             ?>
                 <section class="container section-html <?php if(get_sub_field("has_top_border")) { echo 'hasTopbar'; } ?>" style="text-align: <?php echo $contentAlignement; ?>">
-                    <div class="inner-container">
+                    <div class="container">
                         <?php echo get_sub_field("html_field"); ?>
                     </div>
                 </section>
@@ -318,6 +318,18 @@ function build_sections()
                             <?php echo get_sub_field("section_content"); ?>
                         </div>
                     </div>
+                </section>
+            <?php }
+            elseif( get_row_layout() == "section_banner" ) // layout: Section Banner
+            { ?>
+                <section class="section-banner">
+                    <div class="bxslider">
+                    <?php
+                      while(has_sub_field('section_banner_slider')):
+                        $image = get_sub_field('section_banner_slider_image');
+                    ?>
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" />
+                    <?php endwhile; ?>
                 </section>
             <?php }
             elseif( get_row_layout() == "section_subscribe" ) // layout: Section Subscribe
@@ -588,7 +600,7 @@ function build_sections()
                     </section>
                 <?php } } ?>
             <?php }
-            elseif( get_row_layout() == "section_banner" ) // layout: Section Banner
+            elseif( get_row_layout() == "section_banner_1" ) // layout: Section Banner
             { ?>
                 <?php load_Img(".section-banner", "banner_background_image"); ?>
                 <?php if(is_front_page()&&($detect->isMobile())) { ?>
