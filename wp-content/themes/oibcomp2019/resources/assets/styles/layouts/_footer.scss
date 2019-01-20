@@ -1,0 +1,88 @@
+.content-info {
+  .logo {
+    float: left;
+  }
+  .leftpart {
+    width: 50%;
+  }
+  .rightpart {
+    width: 42%;
+  }
+  .tagline {
+    float: left;
+    margin-left: 15px;
+  }
+  .footer-promo {
+    overflow: hidden;
+  }
+  .sendmsg {
+    background-color: #f7e9e8;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 25px 30px;
+    margin-top: 30px;
+    .label {
+      color: #a09998;
+      font-weight: 600;
+      line-height: 1.3;
+      @include font-size-sass(18px);
+    }
+    .help-email {
+      font-weight: 700;
+      @include font-size-sass(22px);
+      line-height: 1.09;
+      margin-top: 15px;
+      a {
+        color: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        text-decoration: none;
+      }
+    }
+    .fLeft {
+      padding: 15px 0;
+      padding-right: 20px;
+    }
+    .fRight {
+      padding: 15px 0;
+      border-left: 1px solid #979797;
+      padding-left: 20px;
+    }
+  }
+  .tagline {
+    h3 {
+      @include font-size-sass(50px);
+      line-height: 1;
+    }
+  }
+  .hidefooter {
+    display: none;
+  }
+  .list > li {
+    float: left;
+  }
+  .list li > a {
+    font-weight: 700;
+  }
+  .list .sub-menu li > a {
+    color: rgba(74,74,74,0.5);
+    @include font-size-sass(14px);
+    font-weight: 400;
+  }
+  .list > li {
+    margin: 30px 20px 0;
+  }
+  .footer-info {
+    overflow: hidden;
+  }
+  hr {
+    margin-top: 20px;
+  }
+  .copyright {
+    @include font-size-sass(14px);
+    color: rgba(74,74,74,0.5);
+  }
+  .boldMF {
+    @include font-size-sass(14px);
+  }
+}

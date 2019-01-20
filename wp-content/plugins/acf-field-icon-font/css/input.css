@@ -1,0 +1,20 @@
+.ef-icon-preview{
+    display: inline-block;
+    font-size: 24px;
+    padding: 20px 10px 0px 10px;
+    border: 1px dashed rgb(236, 220, 220);
+    margin-bottom: 10px;
+    min-width: 48px;
+    min-height: 46px;
+}
+.ef-icon-wrapper {
+    width: 18%;
+    text-align: center;
+}
+.ef-icon-wrapper select{
+    min-width: 140px;
+}
+.icon-font-selector{
+    padding: 2px;
+    width: 99%;
+}
