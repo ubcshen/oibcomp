@@ -8,6 +8,8 @@ export default {
       });
     }
 
+    $( 'p:empty' ).remove();
+
     $('.bxslider').bxSlider({
       adaptiveHeight: false,
       controls: true,

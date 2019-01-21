@@ -398,6 +398,7 @@ h2 {
 h1 {
   @include font-size-sass(90px);
   color: #fff;
+  text-align: center;
 }
 
 html {
@@ -1059,6 +1060,17 @@ a.btn {
     font-weight: 900;
     color: #4a4a4a;
     @include font-size-sass(40px);
+  }
+  &.txtCenter {
+    text-align: center;
+    max-width: 770px;
+    width: 100%;
+    margin: 20px auto 0;
+    hr {
+      border-top: 1px solid #4a4a4a;
+      width: 5rem;
+      margin: 2.125rem auto;
+    }
   }
 }
 

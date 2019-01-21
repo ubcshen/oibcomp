@@ -58,6 +58,12 @@ function remove_dns_prefetch( $hints, $relation_type ) {
 
 add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );
 
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 if( !defined('OIB_PAGE_PATH') ){
     define('OIB_PAGE_PATH', get_template_directory() .'/' );
 }

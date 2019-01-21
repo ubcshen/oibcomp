@@ -52,4 +52,17 @@
   .list-part {
     padding-top: 20px;
   }
+  .logos {
+    .logo {
+      width: 30%;
+    }
+    .inline {
+      vertical-align: middle;
+      margin-top: 0;
+      line-height: 1.1;
+    }
+    h3 {
+      margin-left: 3px;
+    }
+  }
 }
