@@ -296,13 +296,13 @@ function build_sections()
         while( has_sub_field("section_builder") )
         {
             if( get_row_layout() == "section_html" ) // layout: Section Html
-            {
-                $contentAlignement = get_sub_field("text_alignment");
+            { 
+              $fullWidth = get_sub_field("enable_full_width");
             ?>
-                <section class="container section-html <?php if(get_sub_field("has_top_border")) { echo 'hasTopbar'; } ?>" style="text-align: <?php echo $contentAlignement; ?>">
-                    <div class="container">
+                <section class="<?php if(!$fullWidth) { echo 'container'; } ?> section-html">
+                    <?php if(!$fullWidth) { ?><div class="container"><?php } ?>
                         <?php echo get_sub_field("html_field"); ?>
-                    </div>
+                    <?php if(!$fullWidth) { ?></div><?php } ?>
                 </section>
             <?php }
             elseif( get_row_layout() == "section_image_with_text" ) // layout: Section image with text
