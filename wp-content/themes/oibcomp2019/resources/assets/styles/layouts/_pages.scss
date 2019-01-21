@@ -1,0 +1,38 @@
+.section-banner {
+  position: relative;
+  .section-banner-content {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    -webkit-transform: translate(50%,-50%);
+    -moz-transform: translate(50%,-50%);
+    -ms-transform: translate(50%,-50%);
+    -o-transform: translate(50%,-50%);
+    transform: translate(50%,-50%);
+  }
+}
+
+.section-multi-image-with-content {
+  .tagline .h2size {
+    text-transform: uppercase;
+  }
+  .multiImages {
+    width: 40%;
+  }
+  .content {
+    width: 60%;
+    &.fLeft {
+      padding-right: 2.5rem;
+    }
+    &.fRight {
+      padding-left: 2.5rem;
+    }
+  }
+  hr {
+    width: 5rem;
+    //float: left;
+    border-top: 1px solid #4a4a4a;
+    padding-left: 0;
+    margin-left: 0;
+  }
+}

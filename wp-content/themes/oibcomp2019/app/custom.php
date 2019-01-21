@@ -320,16 +320,43 @@ function build_sections()
                     </div>
                 </section>
             <?php }
+            elseif( get_row_layout() == "section_multi_images_with_content" ) // layout: Section Multi Images with content
+            {
+                $imageAlignment = get_sub_field("section_alignment");
+                $textAlignement = ($imageAlignment == 'Left') ? "Right" : "Left";
+                //$image = get_sub_field('section_image');
+            ?>
+                <section class="container section-multi-image-with-content">
+                    <div class="container">
+                        <div class="multiImages f<?php echo $imageAlignment; ?>">
+                          <?php
+                            while(has_sub_field('section_multi_images_with_content_images')):
+                            $image = get_sub_field('section_multi_images_with_content_image');
+                          ?>
+                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" />
+                        <?php endwhile; ?>
+                        </div>
+                        <div class="content f<?php echo $textAlignement; ?>">
+                            <?php echo get_sub_field("section_multi_images_with_content_title"); ?>
+                            <?php echo get_sub_field("section_multi_images_with_content_content"); ?>
+                        </div>
+                    </div>
+                </section>
+            <?php }
             elseif( get_row_layout() == "section_banner" ) // layout: Section Banner
             { ?>
                 <section class="section-banner">
                     <div class="bxslider">
-                    <?php
-                      while(has_sub_field('section_banner_slider')):
-                        $image = get_sub_field('section_banner_slider_image');
-                    ?>
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" />
-                    <?php endwhile; ?>
+                      <?php
+                        while(has_sub_field('section_banner_slider')):
+                          $image = get_sub_field('section_banner_slider_image');
+                      ?>
+                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" />
+                      <?php endwhile; ?>
+                    </div>
+                    <div class="section-banner-content">
+                      <?php echo get_sub_field("section_banner_content"); ?>
+                    </div>
                 </section>
             <?php }
             elseif( get_row_layout() == "section_subscribe" ) // layout: Section Subscribe
