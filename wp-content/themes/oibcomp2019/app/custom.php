@@ -298,8 +298,9 @@ function build_sections()
             if( get_row_layout() == "section_html" ) // layout: Section Html
             { 
               $fullWidth = get_sub_field("enable_full_width");
+              $cssClass = get_sub_field("section_html_class");
             ?>
-                <section class="<?php if(!$fullWidth) { echo 'container'; } ?> section-html">
+                <section class="<?php if(!$fullWidth) { echo 'container'; } ?> section-html <?php echo $cssClass; ?>">
                     <?php if(!$fullWidth) { ?><div class="container"><?php } ?>
                         <?php echo get_sub_field("html_field"); ?>
                     <?php if(!$fullWidth) { ?></div><?php } ?>

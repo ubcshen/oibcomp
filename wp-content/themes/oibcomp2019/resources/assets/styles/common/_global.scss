@@ -1022,7 +1022,7 @@ body {
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 strong,
@@ -1159,3 +1159,12 @@ h3 {
     right: initial;
   }
 }
+
+.redbg {
+  background-color: rgba(176,41,28,0.1);
+  padding: 3.75rem 0;
+  hr {
+    border-top: 1px solid rgba(151,151,151,0.5);
+  }
+}
+
