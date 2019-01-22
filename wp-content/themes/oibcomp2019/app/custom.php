@@ -318,14 +318,14 @@ function build_sections()
                 $textAlignement = ($imageAlignment == 'Left') ? "Right" : "Left";
                 $image = get_sub_field('section_image');
             ?>
-                <section class="container section-image-with-text">
-                    <div class="inner-container">
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive f<?php echo $imageAlignment; ?>" />
-                        <div class="content f<?php echo $textAlignement; ?>">
-                            <?php echo get_sub_field("section_content"); ?>
-                        </div>
+            <section class="container section-image-with-text">
+                <div class="inner-container">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive f<?php echo $imageAlignment; ?>" />
+                    <div class="content f<?php echo $textAlignement; ?>">
+                        <?php echo get_sub_field("section_content"); ?>
                     </div>
-                </section>
+                </div>
+            </section>
             <?php }
             elseif( get_row_layout() == "section_multi_images_with_content" ) // layout: Section Multi Images with content
             {
@@ -743,27 +743,19 @@ function build_sections()
             elseif( get_row_layout() == "section_cols" ) // layout: Section Cols
             {
                 $colNo = get_sub_field("col_number"); // only 2 right now
+                $className = get_sub_field("section_cols_class");
+                $textAlignment = get_sub_field("section_text_alignment");
                 ?>
-                <section class="container section-cols section-cols-<?php echo $colNo; ?>">
-                    <div class="inner-container">
-                        <h2><?php echo get_sub_field("section_cols_headline"); ?></h2>
-                        <div class="section-content"><?php echo get_sub_field("section_cols_content"); ?></div>
-                    </div>
-                    <div class="cols">
+                <section class="section-cols section-cols-<?php echo $colNo; ?> <?php echo $className . ' txt' . $textAlignment; ?>">
+                    <div class="cols container">
                         <?php
-                          while(has_sub_field('cols')):
+                          while(has_sub_field('section_cols_container')):
                             $image = get_sub_field('col_image');
-                            $newTab = get_sub_field('open_new_tab');
-                            $colTitleLink = get_sub_field('col_title_link');
-                            $colHeadlineLink = get_sub_field('col_headline_link');
+                            $colContent = get_sub_field('col_content');
                         ?>
-                        <div class="col">
+                        <div class="colItem inline">
                             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--<?php echo $colNo; ?>" />
-                            <div class="item-content">
-                                <h4><a href="<?php echo $colTitleLink; ?>" class="cta-brown" target="<?php if($newTab) { echo '_blank'; } else { echo '_self'; } ?>"><?php echo get_sub_field("col_title"); ?></a></h4>
-                                <a href="<?php echo $colHeadlineLink; ?>" class="cta-brown" target="<?php if($newTab) { echo '_blank'; } else { echo '_self'; } ?>"><?php echo get_sub_field("col_headline"); ?></a>
-                                <p><?php echo get_sub_field("col_content"); ?></p>
-                            </div>
+                            <?php echo $colContent; ?>
                         </div>
                         <?php endwhile; ?>
                     </div>
