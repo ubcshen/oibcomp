@@ -9,6 +9,7 @@
     -ms-transform: translate(50%,-50%);
     -o-transform: translate(50%,-50%);
     transform: translate(50%,-50%);
+    text-align: center;
   }
 }
 
@@ -112,6 +113,23 @@
       text-align: center;
       h3 {
         font-weight: 900;
+      }
+    }
+  }
+  &.section-cols-2 {
+    .cols {
+      overflow: hidden;
+    }
+    .colItem {
+      width: 48%;
+      float: left;
+      position: relative;
+      &:nth-child(even) {
+        float: right;
+      }
+      img {
+        width: 100%;
+        height: auto;
       }
     }
   }

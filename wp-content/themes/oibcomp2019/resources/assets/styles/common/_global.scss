@@ -475,8 +475,8 @@ p {
 
 hr.short {
   width: 100px;
-  border-color: #ab9767;
-  border-width: 2px;
+  border-color: #fff;
+  border-width: 1px;
 }
 
 .semiBold {
@@ -734,10 +734,14 @@ h5 {
   text-align: center;
 }
 
-.fancyboxVideo {
+a.btn.white-btn {
   color: #fff;
-  font-weight: 600;
-  &::before {
+  font-weight: 700;
+  @include font-size-sass(18px);
+  line-height: 2;
+  border: 1px solid #fff;
+  padding: 5px 40px;
+  /*&::before {
     content: url("./images/playBtn.png");
     font-family: "fontello";
     font-style: normal;
@@ -756,7 +760,7 @@ h5 {
     -moz-osx-font-smoothing: grayscale;
     vertical-align: middle;
     margin-right: 1.625rem;
-  }
+  }*/
   &:hover,
   &:focus {
     color: #ab9767;
@@ -845,33 +849,6 @@ h5 {
     &.bx-prev {
       right: 10px;
     }
-  }
-}
-
-.process {
-  .bx-wrapper .bx-next {
-    right: 55px;
-    @include breakpoint(medium1350-down) {
-      right: 25px;
-    }
-    @include breakpoint(medium1280-down) {
-      right: 18px;
-    }
-    @include breakpoint(medium1100-down) {
-      right: 0;
-    }
-  }
-  .bx-wrapper .bx-prev {
-    right: 110px;
-    @include breakpoint(medium1350-down) {
-      right: 85px;
-    }
-    @include breakpoint(medium1280-down) {
-      right: 55px;
-    }
-  }
-  .section-tabs-system .grid .bx-wrapper .bx-controls-direction a {
-    color: #ab9767;
   }
 }
 
@@ -1073,6 +1050,42 @@ a.btn {
       margin: 2.125rem auto;
     }
   }
+  &.slider-banner {
+    text-align: center;
+    h3 {
+      color: #fff;
+      @include font-size-sass(50px);
+    }
+    .h2size {
+      color: #fff;
+      @include font-size-sass(60px);
+      text-align: center;
+    }
+  }
+  &.col-tagline {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    -webkit-transform: translate(15%, -50%);
+    -o-transform: translate(15%, -50%);
+    transform: translate(15%, -50%);
+    text-align: center;
+    h3 {
+      color: #fff;
+      font-weight: 300;
+      letter-spacing: -0.43px;
+      line-height: 1;
+      @include font-size-sass(30px);
+      text-align: center;
+    }
+    .h2size {
+      color: #fff;
+      letter-spacing: 2px;
+      line-height: 1;
+      @include font-size-sass(40px);
+      text-align: center;
+    }
+  }
 }
 
 .red,
@@ -1142,7 +1155,7 @@ h3 {
 
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
-  bottom: 20px;
+  bottom: 80px;
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a {
@@ -1189,4 +1202,11 @@ h3 {
 .section-html.noBottom {
   margin-bottom: 0;
   padding-bottom: 0;
+}
+
+.centerTxt {
+  text-align: center;
+  .tagline .h2size {
+    text-align: center;
+  }
 }

@@ -748,6 +748,7 @@ function build_sections()
                 ?>
                 <section class="section-cols section-cols-<?php echo $colNo; ?> <?php echo $className . ' txt' . $textAlignment; ?>">
                     <div class="cols container">
+                      <?php if($className=="lessWidth") { ?><div class="container"><?php } ?>
                         <?php
                           while(has_sub_field('section_cols_container')):
                             $image = get_sub_field('col_image');
@@ -758,6 +759,7 @@ function build_sections()
                             <?php echo $colContent; ?>
                         </div>
                         <?php endwhile; ?>
+                      <?php if($className=="lessWidth") { ?></div><?php } ?>
                     </div>
                 </section>
             <?php }
