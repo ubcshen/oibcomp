@@ -70,6 +70,31 @@
       margin-left: 3px;
     }
   }
+  .activities-container {
+    .activities {
+      width: 28%;
+      padding: 10px 0;
+      .activity {
+        padding: 35px 0;
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
+    .vline {
+      height: 500px;
+      margin: 0 4% 0 2%;
+    }
+    .inline {
+      vertical-align: middle;
+      margin-top: 0;
+      line-height: 1.1;
+    }
+    h3 {
+      margin-left: 10px;
+      max-width: 250px;
+    }
+  }
 }
 
 .section-cols {
