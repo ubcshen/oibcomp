@@ -1065,10 +1065,10 @@ a.btn {
   &.col-tagline {
     position: absolute;
     top: 50%;
-    right: 20%;
-    -webkit-transform: translate(15%, -50%);
-    -o-transform: translate(15%, -50%);
-    transform: translate(15%, -50%);
+    right: 10%;
+    -webkit-transform: translate(6%, -50%);
+    -o-transform: translate(6%, -50%);
+    transform: translate(6%, -50%);
     text-align: center;
     h3 {
       color: #fff;
@@ -1208,5 +1208,8 @@ h3 {
   text-align: center;
   .tagline .h2size {
     text-align: center;
+  }
+  p {
+    text-align: left;
   }
 }
