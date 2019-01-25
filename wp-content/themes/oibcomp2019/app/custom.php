@@ -364,6 +364,11 @@ function build_sections()
                     <div class="section-banner-content">
                       <?php echo get_sub_field("section_banner_content"); ?>
                     </div>
+                    <?php if(get_sub_field("section_banner_search_bar")) { ?>
+                    <div class="section-banner-search">
+                      <?php echo get_sub_field("section_banner_search_bar"); ?>
+                    </div>
+                    <?php } ?>
                 </section>
             <?php }
             elseif( get_row_layout() == "section_subscribe" ) // layout: Section Subscribe

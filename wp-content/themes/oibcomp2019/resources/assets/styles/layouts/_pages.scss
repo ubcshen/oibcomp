@@ -135,3 +135,59 @@
   }
 }
 
+.home {
+  .tagline.slider-banner {
+    h3 {
+      @include font-size-sass(70px);
+    }
+  }
+  .section-banner {
+    margin-bottom: 280px;
+  }
+}
+
+.section-banner-search {
+  background-color: #f7e9e8;
+  padding: 30px;
+  max-width: 760px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  width: 100%;
+  margin-left: -380px;
+  label {
+    font-weight: 600;
+    @include font-size-sass(14px);
+    line-height: 1.1;
+    letter-spacing: 0.6px;
+  }
+  .inline {
+    margin-right: 4%;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  input[type="date"] {
+    font-weight: 300;
+    @include font-size-sass(14px);
+    line-height: 1.1;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #4a4a4a;
+    padding: 8px 30px;
+  }
+  input[type="date"] {
+    background-image: url(/wp-content/themes/oibcomp2019/resources/assets/images/cal.png);
+    background-position: 3% 50%;
+    background-repeat: no-repeat;
+  }
+  input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+}
+

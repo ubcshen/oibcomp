@@ -1,0 +1,15 @@
+a.btn {
+  padding: 0.275rem 2.825rem;
+  font-weight: 700;
+  line-height: 2.5;
+  color: #fff;
+  @include font-size-sass(18px);
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+  &.red-btn {
+    background-color: #b0291c;
+    color: #fff;
+  }
+}
