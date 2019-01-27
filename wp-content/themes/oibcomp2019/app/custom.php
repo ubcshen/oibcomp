@@ -302,14 +302,14 @@ function build_sections()
         while( has_sub_field("section_builder") )
         {
             if( get_row_layout() == "section_html" ) // layout: Section Html
-            { 
+            {
               $fullWidth = get_sub_field("enable_full_width");
               $cssClass = get_sub_field("section_html_class");
             ?>
-                <section class="<?php if(!$fullWidth) { echo 'container'; } ?> section-html <?php echo $cssClass; ?>">
-                    <?php if(!$fullWidth) { ?><div class="container"><?php } ?>
+                <section class="<?php if(!$fullWidth && !preg_match('/\bnoMargin\b/',$cssClass)) { echo 'container'; } ?> section-html <?php echo $cssClass; ?>">
+                    <?php if(!$fullWidth && !preg_match('/\bnoMargin\b/',$cssClass)) { ?><div class="container"><?php } ?>
                         <?php echo get_sub_field("html_field"); ?>
-                    <?php if(!$fullWidth) { ?></div><?php } ?>
+                    <?php if(!$fullWidth && !preg_match('/\bnoMargin\b/',$cssClass)) { ?></div><?php } ?>
                 </section>
             <?php }
             elseif( get_row_layout() == "section_image_with_text" ) // layout: Section image with text
@@ -317,10 +317,22 @@ function build_sections()
                 $imageAlignment = get_sub_field("image_alignment");
                 $textAlignement = ($imageAlignment == 'Left') ? "Right" : "Left";
                 $image = get_sub_field('section_image');
+                $video = get_sub_field('video_id');
+                $cssImageClass = get_sub_field("section_class");
+                if(preg_match('/\bhasWaveBg\b/',$cssImageClass)) {
+                  load_Img(".hasWaveBg", "section_background_image");
+                }
             ?>
-            <section class="container section-image-with-text">
-                <div class="inner-container">
+            <section class="<?php if(!preg_match('/\bhasWaveBg\b/',$cssImageClass)) { echo 'container'; } ?> section-image-with-text <?php echo $cssImageClass; ?>">
+                <div class="inner-container <?php echo $cssImageClass; ?> <?php if(preg_match('/\bhasWaveBg\b/',$cssImageClass)) { echo 'container'; } ?>">
+                    <?php if($image) { ?>
                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive f<?php echo $imageAlignment; ?>" />
+                    <?php } ?>
+                    <?php if($video) { ?>
+                    <div class="f<?php echo $imageAlignment; ?>">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>?autohide=1&loop=1&autoplay=1&controls=0&showinfo=0&rel=0&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <?php } ?>
                     <div class="content f<?php echo $textAlignement; ?>">
                         <?php echo get_sub_field("section_content"); ?>
                     </div>

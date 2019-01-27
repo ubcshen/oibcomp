@@ -389,7 +389,8 @@ img {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: $hfont;
   font-weight: 900;
   line-height: 1;
@@ -1049,6 +1050,9 @@ a.btn {
       width: 5rem;
       margin: 2.125rem auto;
     }
+    .red-border-btn {
+      margin: 2rem auto;
+    }
   }
   &.slider-banner {
     text-align: center;
@@ -1216,4 +1220,9 @@ h3 {
   p {
     text-align: left;
   }
+}
+
+.max750 {
+  max-width: 750px;
+  margin: 0 auto;
 }

@@ -12,4 +12,9 @@ a.btn {
     background-color: #b0291c;
     color: #fff;
   }
+  &.red-border-btn {
+    background-color: transparent;
+    color: #b0291c;
+    border: 2px solid #b0291c;
+  }
 }
