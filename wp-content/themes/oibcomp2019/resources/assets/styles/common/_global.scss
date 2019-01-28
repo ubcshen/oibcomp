@@ -1053,6 +1053,9 @@ a.btn {
     .red-border-btn {
       margin: 2rem auto;
     }
+    .h2size {
+      text-align: center;
+    }
   }
   &.slider-banner {
     text-align: center;
@@ -1195,7 +1198,7 @@ h3 {
 }
 
 .redbg {
-  background-color: rgba(176,41,28,0.1);
+  background-color: #f2e9d8;
   padding: 3.75rem 0;
   hr {
     border-top: 1px solid rgba(151,151,151,0.5);

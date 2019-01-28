@@ -171,7 +171,7 @@
 }
 
 .section-banner-search {
-  background-color: #f7e9e8;
+  background-color: #f2e9d8;
   padding: 30px;
   max-width: 760px;
   overflow: hidden;
@@ -253,6 +253,35 @@
     }
     .red-border-btn {
       margin: 20px 0;
+    }
+  }
+}
+
+.customize-bxslidercontainer {
+  .bx-wrapper {
+    height: 720px;
+    .bx-viewport, .img-slider, .section-imag-content {
+      height: 720px !important;
+    }
+  }
+  .section-banner-content {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    -webkit-transform: translate(50%, -50%);
+    -o-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    text-align: center;
+  }
+  .section-slider-control {
+    width: 16.2%;
+    display: inline-block;
+    &:hover {
+      cursor: pointer;
+    }
+    img {
+      width: auto;
+      height: 188px;
     }
   }
 }

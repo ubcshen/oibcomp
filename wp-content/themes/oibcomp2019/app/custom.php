@@ -383,21 +383,29 @@ function build_sections()
                     <?php } ?>
                 </section>
             <?php }
-            elseif( get_row_layout() == "section_subscribe" ) // layout: Section Subscribe
-            {
-                load_Img(".section-subscribe", "section_subscribe_background_image");
-                $image = get_sub_field('section_subscribe_book_image');
-                $enableDownload = get_sub_field('enable_download');
-            ?>
-                <section class="container section-subscribe" id="section-subscribe">
-                    <div class="sub_container">
-                        <h2><?php echo get_sub_field("section_subscribe_title"); ?></h2>
-                        <div class="section-content"><?php echo get_sub_field("section_subscribe_content"); ?></div>
-                        <?php if($enableDownload) { ?>
-                            <a href="<?php echo get_sub_field("download_file")['url']; ?>" class="btn white-btn" target="_blank"><?php echo get_sub_field("download_btn"); ?></a>
-                        <?php } ?>
+            elseif( get_row_layout() == "section_image_slider" ) // layout: Section Image Slider
+            { ?>
+                <section class="section-image-slider">
+                    <?php echo get_sub_field('section_image_slider_info'); ?>
+                    <div class="customize-bxslidercontainer ">
+                        <div class="slider-control container ">
+                            <?php $i = 0; while(has_sub_field('section_image_slider_content')): $logo = get_sub_field('slider_icon'); ?>
+                            <a data-slide-index="<?php echo $i; ?>" class="section-slider-control">
+                            <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" width="<?php echo $logo['width']; ?>" height="<?php echo $logo['height']; ?>" class="img-responsive" /></a>
+                            <?php $i++; endwhile; ?>
+                        </div>
+                        <div class="img-slider">
+                            <?php
+                            while(has_sub_field('section_image_slider_content')):
+                              $image = get_sub_field('slider_image');
+                              $sliderInfo = get_sub_field('slider_content');
+                            ?>
+                            <div class="section-imag-content" style="background:url(<?php echo $image['url']; ?>); background-repeat: no-repeat;background-size: cover;background-position: center center;">
+                              <div class="section-banner-content"><?php echo $sliderInfo; ?></div>
+                            </div>
+                            <?php endwhile; ?>
+                        </div>
                     </div>
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive sub-img" />
                 </section>
             <?php }
             elseif( get_row_layout() == "section_tab_system" ) // layout: Section Tabs
