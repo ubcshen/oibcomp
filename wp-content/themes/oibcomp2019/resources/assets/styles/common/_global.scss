@@ -52,6 +52,10 @@
     @media (max-width: 1390px) {
       @content;
     }
+  } @else if $point == medium1355-down {
+    @media (max-width: 1355px) {
+      @content;
+    }
   } @else if $point == medium1350-down {
     @media (max-width: 1350px) {
       @content;
@@ -144,6 +148,10 @@
     @media (max-width: 983px) {
       @content;
     }
+  } @else if $point == medium980-down {
+    @media (max-width: 980px) {
+      @content;
+    }
   } @else if $point == medium970-down {
     @media (max-width: 970px) {
       @content;
@@ -180,6 +188,10 @@
     @media (min-width: 900px) {
       @content;
     }
+  } @else if $point == medium880-down {
+    @media (max-width: 880px) {
+      @content;
+    }
   } @else if $point == medium870-down {
     @media (max-width: 870px) {
       @content;
@@ -200,8 +212,16 @@
     @media (max-width: 800px) {
       @content;
     }
+  } @else if $point == medium780-down {
+    @media (max-width: 780px) {
+      @content;
+    }
   } @else if $point == medium767-down {
     @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == medium766-down {
+    @media (max-width: 766px) {
       @content;
     }
   } @else if $point == medium750-down {
@@ -397,9 +417,21 @@ h3 {
 }
 
 h1 {
-  @include font-size-sass(90px);
+  @include font-size-sass(76.8px);
   color: #fff;
   text-align: center;
+  @include breakpoint(medium1355-down) {
+    @include font-size-sass(80px);
+  }
+  @include breakpoint(medium1250-down) {
+    @include font-size-sass(65px);
+  }
+  @include breakpoint(medium980-down) {
+    @include font-size-sass(45px);
+  }
+  @include breakpoint(medium700-dow) {
+    @include font-size-sass(24px);
+  }
 }
 
 html {
@@ -536,31 +568,13 @@ hr.short {
 h2 {
   @include font-size-sass(36px);
   line-height: 1.28;
-  color: #b0291c;
+  color: #9e4128;
   letter-spacing: -1px;
   @include breakpoint(medium750-down) {
     @include font-size-sass(32px);
     letter-spacing: -0.89px;
     line-height: 1.2;
   }
-}
-
-.cta-brown,
-h4 {
-  color: #ab9767;
-  text-transform: uppercase;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.cta-brown:hover {
-  color: #ab9767;
-  text-decoration: underline;
-}
-
-a.backtonews {
-  color: #ab9767;
-  font-weight: 600;
 }
 
 h4 {
@@ -764,7 +778,8 @@ a.btn.white-btn {
   }*/
   &:hover,
   &:focus {
-    color: #ab9767;
+    color: #4a4a4a;
+    background-color: #fff;
   }
 }
 
@@ -772,33 +787,8 @@ a.btn.white-btn {
   margin-bottom: 5px;
 }
 
-.inner-tabs {
-  overflow: hidden;
-}
-
 .anchor {
   padding-left: 10px;
-}
-
-.hasTopbar {
-  border-top: 2px solid #ab9767;
-  @include breakpoint(medium750-down) {
-    border-top: 2px solid #d8d8d8;
-    .inner-container h3 {
-      color: #ab9767;
-      font-weight: 600;
-      margin: 15px 0;
-    }
-  }
-}
-
-.double-filters-mobile-layout {
-  .inner-container h3 {
-    color: #ab9767;
-    font-weight: 600;
-    margin: 15px 0 15px 15px;
-    text-align: left;
-  }
 }
 
 .video-background {
@@ -808,6 +798,7 @@ a.btn.white-btn {
   top: 0;
   left: 0;
 }
+
 .video-foreground,
 .video-background iframe {
   position: absolute;
@@ -908,7 +899,7 @@ a.btn.white-btn {
 a {
   color: #4a4a4a;
   &:hover {
-    color: #ab9767;
+    color: #ba6027;
   }
   span,
   strong,
@@ -1032,13 +1023,20 @@ a.btn {
     font-weight: 300;
     color: #808080;
     @include font-size-sass(30px);
+    @include breakpoint(medium1100-down) {
+      @include font-size-sass(24px);
+    }
   }
   .h2size {
     font-family: $hfont;
     font-weight: 900;
-    color: #4a4a4a;
+    color: $h-font-color;
     @include font-size-sass(40px);
     text-align: left;
+    margin: 1.25rem 0;
+    @include breakpoint(medium1100-down) {
+      @include font-size-sass(32px);
+    }
   }
   &.txtCenter {
     text-align: center;
@@ -1146,7 +1144,7 @@ h3 {
 
 [type="submit"] {
   width: 100%;
-  background-color: #b0291c;
+  background-color: #ba6027;
   border: 0;
   color: #fff;
   @include font-size-sass(20px);
@@ -1229,3 +1227,85 @@ h3 {
   max-width: 750px;
   margin: 0 auto;
 }
+
+.section-gallery {
+  padding-left: 2rem;
+}
+
+.grid::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 32%;
+  //max-width: 380px;
+}
+
+.grid-item {
+  float: left;
+  //height: auto;
+  margin-bottom: 10px;
+  //width: 380px;
+}
+
+.grid-item--width2 {
+  width: 64.8%;
+  //max-width: 770px;
+}
+
+* { box-sizing: border-box; }
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fancybox-close-small {
+  top: 0;
+  right: 0;
+  float: right;
+  width: 44px;
+  background-color: #000;
+}
+
+.titlea {
+  text-decoration: underline;
+  @include font-size-sass(20px);
+  font-weight: 900;
+  font-family: $hfont;
+}
+
+.wpcf7-form p {
+  padding: 5px 0;
+}
+/*#imgg1 {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#imgg2, #imgg5, #imgg7, #imgg9 {
+  margin-bottom: 10px;
+}
+
+#imgg3, #imgg4, #imgg6 {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#imgg8 {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}*/

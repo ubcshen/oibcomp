@@ -7,6 +7,10 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <nav class="hide-desktop">
+      @if (has_nav_menu('primary_navigation'))
+        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
+      @endif
+    </nav>
     @php do_action('get_header') @endphp
     @include('partials.header')
     <div class="wrap" role="document">

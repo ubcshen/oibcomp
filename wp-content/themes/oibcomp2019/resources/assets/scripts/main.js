@@ -6,6 +6,7 @@ import './autoload/**/*'
 
 // import local dependencies
 import Router from './util/Router';
+import './util/isotope.pkgd.min';
 import './bxslider/dist/jquery.bxslider.min';
 import './fancybox/dist/jquery.fancybox.min';
 import 'select2/dist/js/select2.full.js';

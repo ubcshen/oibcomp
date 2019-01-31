@@ -8,29 +8,33 @@
 
 .banner .brand {
   float: left;
+  img {
+    max-width: 200px;
+    height: 100%;
+  }
 }
 
 .nav-primary {
   float: right;
 }
 
-.banner {
-  overflow: hidden;
-  padding: 40px 0;
-}
-
 .nav a {
   font-family: $default-font;
   @include font-size-sass(16px);
+  padding: 20px 0;
   font-weight: 600;
+  &:hover {
+    color: #ba6027;
+  }
 }
 
 .nav .sub-menu {
   display: none;
   position: absolute;
   background-color: #fff;
-  //min-width: 180px;
+  min-width: 200px;
   padding: 10px;
+  margin-left: -42px;
   //box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
   a {
@@ -39,6 +43,9 @@
     text-decoration: none;
     display: block;
     text-align: left;
+    &:hover {
+      color: #ba6027;
+    }
   }
   &::before {
     width: 0;
@@ -51,7 +58,6 @@
     top: -15px;
     left: 50%;
     margin-left: -17px;
-    content: "";
   }
 }
 
@@ -61,6 +67,11 @@
 
 .callinfo {
   text-align: right;
+  font-weight: 600;
+}
+
+.menu-item {
+  position: relative;
 }
 
 .menu-item-has-children > a::after {
@@ -68,3 +79,190 @@
   padding-left: 5px;
 }
 
+.current_page_item > a {
+  font-weight: 700;
+}
+
+.banner {
+  padding: 40px 0;
+  position: relative;
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0 12px;
+    z-index: 20;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.6);
+    .nav-primary {
+      padding-top: 0;
+    }
+    .mobile-primary {
+      @include breakpoint(medium1000-down) {
+        padding-top: 5px;
+      }
+    }
+    .forLoaded {
+      width: 100px;
+      height: auto;
+    }
+    .callinfo,
+    hr {
+      display: none;
+    }
+    .nav a,
+    .nav > li > a,
+    a:not([href]):not([tabindex]) {
+      color: #4a4a4a;
+      &:hover {
+        color: #ba6027;
+      }
+    }
+    .nav > li.booknownav > a {
+      color: #fff;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+header {
+  hr {
+    margin-bottom: 0.875rem;
+  }
+  &::after {
+    content: '';
+    clear: both;
+    display:block;
+    overflow:hidden;
+  }
+}
+
+.home {
+  header {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    top: 0;
+    z-index:10;
+    overflow: visible;
+    .callinfo,
+    .social_icon,
+    .nav > li > a,
+    a:not([href]):not([tabindex]) {
+      color: #fff;
+      &:hover {
+        color: #ba6027;
+      }
+    }
+    hr {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .nav > li.booknownav > a {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.hide-desktop {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #ab9767;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 30px;
+  a,
+  a:not([href]):not([tabindex]) {
+    padding: 8px 8px 3px 32px;
+    text-decoration: none;
+    @include font-size-sass(16px);
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+  }
+  &.open {
+    width: 225px;
+    z-index: 10;
+  }
+  .menu-item {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 5px;
+    &.current-menu-ancestor > a {
+      border-bottom: none;
+    }
+  }
+  .sub-menu {
+    position: relative;
+    background-color: transparent;
+    left: 0;
+    margin-left: 0;
+    display: none;
+    .menu-item {
+      border-bottom: none;
+      a {
+        padding: 3px 3px 3px 25%;
+        line-height: 1.28;
+      }
+    }
+    &::before {
+      content: "";
+      border: 0;
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-left: 0;
+    }
+  }
+  .menu-item-has-children {
+    & > a::after {
+      content: "\E80A";
+      padding-left: 0;
+      padding-right: 32px;
+      float: right;
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: 0.2em;
+      text-align: center;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1em;
+      margin-left: 0.2em;
+      padding-top: 6px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    &.open {
+      & > a::after {
+        content: "\e809";
+      }
+      .sub-menu {
+        display: block;
+      }
+    }
+    &:hover .sub-menu {
+      display: none;
+    }
+    &.open:hover {
+      .sub-menu {
+        display: block;
+      }
+    }
+  }
+}

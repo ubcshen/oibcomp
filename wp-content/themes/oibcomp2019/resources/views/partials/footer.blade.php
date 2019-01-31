@@ -1,10 +1,10 @@
 <footer class="content-info">
   <div class="container">
       <?php $logo = get_field('footer_logo', 'option');  ?>
-      <div class="footer-promo container">
+      <div class="footer-promo">
         <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" width="<?php echo $logo['width']; ?>" height="<?php echo $logo['height']; ?>" class="img-responsive logo" /><?php echo get_field('footer_content', 'option');  ?>
       </div>
-      <div class="footer-info container">
+      <div class="footer-info">
         <div class="fLeft leftpart">
           <?php echo get_field('footer_send_section', 'option');  ?>
         </div>
@@ -17,7 +17,7 @@
         </div>
       </div>
       <hr>
-      <div class="footer-copyright container">
+      <div class="footer-copyright">
         <div class="copyright fLeft">
           <?php echo get_field('copy_right', 'option');  ?>
         </div>

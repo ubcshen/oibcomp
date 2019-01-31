@@ -324,18 +324,20 @@ function build_sections()
                 }
             ?>
             <section class="<?php if(!preg_match('/\bhasWaveBg\b/',$cssImageClass)) { echo 'container'; } ?> section-image-with-text <?php echo $cssImageClass; ?>">
-                <div class="inner-container <?php echo $cssImageClass; ?> <?php if(preg_match('/\bhasWaveBg\b/',$cssImageClass)) { echo 'container'; } ?>">
+                <div class="inner-container <?php if(preg_match('/\bhasVideo\b/',$cssImageClass)) { echo 'hasVideoClip'; } ?> <?php if(preg_match('/\bhasWaveBg\b/',$cssImageClass)) { echo 'container'; } ?>">
+                    <div class="content f<?php echo $textAlignement; ?>">
+                        <?php echo get_sub_field("section_content"); ?>
+                    </div>
                     <?php if($image) { ?>
                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive f<?php echo $imageAlignment; ?>" />
                     <?php } ?>
                     <?php if($video) { ?>
                     <div class="f<?php echo $imageAlignment; ?>">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>?autohide=1&loop=1&autoplay=1&controls=0&showinfo=0&rel=0&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="videoWrapper">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>?autohide=1&loop=1&autoplay=1&controls=0&showinfo=0&rel=0&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
                     <?php } ?>
-                    <div class="content f<?php echo $textAlignement; ?>">
-                        <?php echo get_sub_field("section_content"); ?>
-                    </div>
                 </div>
             </section>
             <?php }
@@ -359,6 +361,22 @@ function build_sections()
                             <?php echo get_sub_field("section_multi_images_with_content_title"); ?>
                             <?php echo get_sub_field("section_multi_images_with_content_content"); ?>
                         </div>
+                    </div>
+                </section>
+            <?php }
+            elseif( get_row_layout() == "section_gallery" ) // layout: Section Gallery
+            { ?>
+                <section class="container section-gallery">
+                    <div class="grid">
+                        <div class="grid-sizer"></div>
+                        <?php $i = 1;
+                            while(has_sub_field('section_gallery_images')):
+                            $image = get_sub_field('section_gallery_image');
+                            $imageLink = get_sub_field('section_gallery_link');
+                          ?>
+                          <?php if($imageLink) { ?><a href="<?php echo $imageLink; ?>" target="_blank"><?php } ?>
+                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive grid-item <?php if($i==2||$i==8) { echo 'grid-item--width2'; } ?>" id="imgg<?php echo $i; ?>" /><?php if($imageLink) { ?></a><?php } ?>
+                        <?php $i++; endwhile; ?>
                     </div>
                 </section>
             <?php }
@@ -405,6 +423,25 @@ function build_sections()
                             </div>
                             <?php endwhile; ?>
                         </div>
+                    </div>
+                </section>
+            <?php }
+            elseif( get_row_layout() == "section_image_tabs" ) // layout: Section Image Tabs
+            { ?>
+                <section class="section-image-tabs container">
+                    <?php echo get_sub_field('section_image_slider_info'); ?>
+                    <div class="section-tabs ">
+                        <?php
+                        while(has_sub_field('tabs')):
+                          $image = get_sub_field('tab_image');
+                          $tab = get_sub_field('tab');
+                          $currentTdb = get_sub_field('current_page');
+                        ?>
+                            <div class="section-tab <?php if($currentTdb) { echo 'section-tab-active'; } ?>">
+                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" /></a>
+                              <div class="section-tab-content"><?php echo $tab; ?></div>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
                 </section>
             <?php }
@@ -658,89 +695,6 @@ function build_sections()
                             </div>
                     </section>
                 <?php } } ?>
-            <?php }
-            elseif( get_row_layout() == "section_banner_1" ) // layout: Section Banner
-            { ?>
-                <?php load_Img(".section-banner", "banner_background_image"); ?>
-                <?php if(is_front_page()&&($detect->isMobile())) { ?>
-                    <header class="banner">
-                      <div class="container">
-                        <a class="brand inline" href="/">
-                            <?php
-                              $image = get_field('header_mobile_logo', 'option');
-                              $imageFixed = get_field('header_mobile_logo', 'option');
-                            ?>
-                            <img src="<?php echo $imageFixed['url']; ?>" alt="<?php echo $imageFixed['alt']; ?>" width="90" height="41" class="img-responsive forFixed" />
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="90" height="41" class="img-responsive forLoaded" />
-                        </a>
-                        <nav class="mobile-primary inline mobile-enable">
-                          <i class="icon-menu"></i>
-                        </nav>
-                      </div>
-                    </header>
-                <?php } ?>
-                <section class="section-banner normalHeight <?php if(!is_front_page()) { echo 'valign-center'; } ?>">
-                    <?php if(is_front_page()&&!$detect->isMobile()) { ?>
-                        <header class="banner">
-                          <div class="container">
-                            <div class="inner-container">
-                                <a class="brand inline" href="/">
-                                  <?php
-                                    $image = get_field('header_logo_home_page', 'option');
-                                    $imageFixed = get_field('header_mobile_logo', 'option');
-                                    ?>
-                                  <img src="<?php echo $imageFixed['url']; ?>" alt="<?php echo $imageFixed['alt']; ?>" width="90" height="41" class="img-responsive forFixed" />
-                                  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="90" height="41" class="img-responsive forLoaded" />
-                                </a>
-                                <nav class="nav-primary inline">
-                                  <?php if (has_nav_menu('primary_navigation'))
-                                    { wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']); }
-                                  ?>
-                                </nav>
-                                <nav class="mobile-primary inline mobile-enable">
-                                  <i class="icon-menu"></i>
-                                </nav>
-                            </div>
-                          </div>
-                        </header>
-                        <?php  if(get_sub_field("banner_background_video") && !$detect->isMobile()) { ?>
-                        <?php
-                            $startTime = get_sub_field("banner_background_video_start_time");
-                            $stopTime = get_sub_field("banner_background_video_stop_time");
-                        ?>
-                        <div class="video-background">
-                            <div class="video-foreground">
-                                <?php
-                                    if($startTime) {
-                                ?>
-                                    <iframe src="https://www.youtube.com/embed/<?php echo get_sub_field("banner_background_video"); ?>?autohide=1&loop=1&autoplay=1&controls=0&showinfo=0&rel=0&playlist=<?php echo get_sub_field("banner_background_video"); ?>&mute=1&start=<?php echo $startTime; ?>" frameborder="0" allowfullscreen allow="autoplay; fullscreen"></iframe>
-                                <?php } else { ?>
-                                    <iframe src="https://www.youtube.com/embed/<?php echo get_sub_field("banner_background_video"); ?>?autohide=1&loop=1&autoplay=1&controls=0&showinfo=0&playlist=<?php echo get_sub_field("banner_background_video"); ?>&rel=0&&mute=1" frameborder="0" allowfullscreen allow="autoplay; fullscreen"></iframe>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <?php } ?>
-                    <?php } ?>
-                    <?php if(is_front_page()) { ?>
-                    </style><div class="valign-center"><?php } ?>
-                    <div class="container">
-                        <div class="inner-container">
-                            <div class="fLeft banner-content">
-                                <?php if(get_sub_field("banner_lightbox_video")) { ?>
-                                    <div class="video-btn">
-                                        <a class="various fancyboxVideo fancybox.iframe" href="https://www.youtube.com/embed/<?php echo get_sub_field("banner_lightbox_video"); ?>?autoplay=1&showinfo=0&rel=0">Watch Video</a>
-                                    </div>
-                                <?php } ?>
-                                <h1><?php echo get_sub_field("banner_header"); ?></h1>
-                                <div class="section-banner-content"><?php echo get_sub_field("banner_subheader"); ?></div>
-                                <?php if(get_sub_field("photo_credit")) { ?>
-                                    <div class="credit"><?php echo get_sub_field("photo_credit"); ?></div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-                    <?php if(is_front_page()) { ?></div><?php } ?>
-                </section>
             <?php }
             elseif( get_row_layout() == "section_intro" ) // layout: Section Intro
             { ?>
