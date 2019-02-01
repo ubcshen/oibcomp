@@ -740,15 +740,6 @@ h5 {
   display: block;
 }
 
-.st-label {
-  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;
-}
-
-.find_more {
-  margin: 2rem auto 3rem;
-  text-align: center;
-}
-
 a.btn.white-btn {
   color: #fff;
   font-weight: 700;
@@ -886,16 +877,6 @@ a.btn.white-btn {
   background-color: #b0291c;
 }
 
-.mobileV-container .element-item {
-  display: none;
-  &.mobile-content-active {
-    display: block;
-  }
-  figure {
-    margin-top: 15px;
-  }
-}
-
 a {
   color: #4a4a4a;
   &:hover {
@@ -923,40 +904,6 @@ a.foot-link {
   @include breakpoint(medium750-down) {
     max-width: 750px;
   }
-}
-
-.section-tabs-system {
-  height: 100%;
-}
-
-.testimonial-bg-image {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  img {
-    visibility: hidden;
-  }
-}
-
-#wp_pagination {
-  text-align: center;
-  margin: 10px auto 20px;
-  .btn {
-    padding: 1rem 3.125rem;
-    &:focus {
-      -webkit-box-shadow: none;
-      box-shadow: none;
-    }
-  }
-}
-
-.hasBothbar {
-  border-top: 2px solid #e9e5dc;
-  border-bottom: 2px solid #e9e5dc;
-  padding: 50px 0;
 }
 
 .wrap {
@@ -1291,6 +1238,19 @@ h3 {
 .wpcf7-form p {
   padding: 5px 0;
 }
+
+.svg_icon {
+  fill: #9e4128;
+}
+
+.section-tab-content-icon .svg_icon {
+  fill: #ab9767;
+}
+
+hr {
+  margin: 1rem -10%;
+}
+
 /*#imgg1 {
   margin-right: 10px;
   margin-bottom: 10px;

@@ -372,10 +372,14 @@ function build_sections()
                         <?php $i = 1;
                             while(has_sub_field('section_gallery_images')):
                             $image = get_sub_field('section_gallery_image');
-                            $imageLink = get_sub_field('section_gallery_link');
                           ?>
-                          <?php if($imageLink) { ?><a href="<?php echo $imageLink; ?>" target="_blank"><?php } ?>
-                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive grid-item <?php if($i==2||$i==8) { echo 'grid-item--width2'; } ?>" id="imgg<?php echo $i; ?>" /><?php if($imageLink) { ?></a><?php } ?>
+                            <figure>
+                                <a href="<?php echo $image['url']; ?>" class="fancyboxTitle" data-fancybox="images"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive grid-item <?php if($i==2||$i==8) { echo 'grid-item--width2'; } ?>" id="imgg<?php echo $i; ?>" /></a>
+                                <figcaption>
+                                    <h3><?php echo get_sub_field("section_gallery_image_title"); ?></h3>
+                                    <?php echo get_sub_field("section_gallery_image_desc"); ?>
+                                </figcaption>
+                            <figure>
                         <?php $i++; endwhile; ?>
                     </div>
                 </section>
@@ -433,12 +437,13 @@ function build_sections()
                     <div class="section-tabs ">
                         <?php
                         while(has_sub_field('tabs')):
-                          $image = get_sub_field('tab_image');
+                          $icon = get_sub_field('tab_icon');
                           $tab = get_sub_field('tab');
+                          $tabLink = get_sub_field('tab_link');
                           $currentTdb = get_sub_field('current_page');
                         ?>
-                            <div class="section-tab <?php if($currentTdb) { echo 'section-tab-active'; } ?>">
-                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" /></a>
+                            <div class="section-tab <?php if($currentTdb) { echo 'section-tab-active'; } ?>" data-link="<?php echo $tabLink; ?>">
+                              <div class="section-tab-content-icon"><?php echo $icon; ?></div>
                               <div class="section-tab-content"><?php echo $tab; ?></div>
                             </div>
                         <?php endwhile; ?>

@@ -42,6 +42,15 @@ export default {
       },
     });
 
+    if($(".section-image-tabs").length) {
+      $(".section-tab").each(function() {
+        $(this).click(function() {
+          var url = $(this).attr("data-link");
+          window.open(url, "_self");
+        });
+      });
+    }
+
     $(window).scroll(function () {
       var scroll = $(window).scrollTop();
       if(scroll>118) {
