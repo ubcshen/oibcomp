@@ -411,9 +411,9 @@ function build_sections()
                     <?php echo get_sub_field('section_image_slider_info'); ?>
                     <div class="customize-bxslidercontainer ">
                         <div class="slider-control container ">
-                            <?php $i = 0; while(has_sub_field('section_image_slider_content')): $logo = get_sub_field('slider_icon'); ?>
+                            <?php $i = 0; while(has_sub_field('section_image_slider_content')): $logo = get_sub_field('slider_icon'); $iconName = get_sub_field('slider_icon_title');  ?>
                             <a data-slide-index="<?php echo $i; ?>" class="section-slider-control">
-                            <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" width="<?php echo $logo['width']; ?>" height="<?php echo $logo['height']; ?>" class="img-responsive" /></a>
+                            <div class="section-tab-content-icon"><?php echo $logo; ?><?php echo $iconName; ?></div></a>
                             <?php $i++; endwhile; ?>
                         </div>
                         <div class="img-slider">

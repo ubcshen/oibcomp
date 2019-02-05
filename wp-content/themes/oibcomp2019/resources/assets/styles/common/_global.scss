@@ -1001,6 +1001,9 @@ a.btn {
     .h2size {
       text-align: center;
     }
+    &.slider-section hr {
+      border-color: #fff;
+    }
   }
   &.slider-banner {
     text-align: center;
