@@ -200,6 +200,10 @@
     @media (max-width: 860px) {
       @content;
     }
+  } @else if $point == medium830-down {
+    @media (max-width: 830px) {
+      @content;
+    }
   } @else if $point == medium810-down {
     @media (max-width: 810px) {
       @content;
@@ -260,6 +264,14 @@
     @media (max-width: 480px) {
       @content;
     }
+  } @else if $point == small440-down {
+    @media (max-width: 440px) {
+      @content;
+    }
+  } @else if $point == small430-down {
+    @media (max-width: 430px) {
+      @content;
+    }
   } @else if $point == small400-down {
     @media (max-width: 400px) {
       @content;
@@ -282,6 +294,10 @@
     }
   } @else if $point == small360-down {
     @media (max-width: 360px) {
+      @content;
+    }
+  } @else if $point == small340-down {
+    @media (max-width: 340px) {
       @content;
     }
   }
@@ -371,6 +387,13 @@ blockquote {
   color: #4a4a4a;
 }
 
+p {
+  @include breakpoint(small640-down) {
+    @include font-size-sass(14px);
+    line-height: 1.57;
+  }
+}
+
 body {
   line-height: 1;
 }
@@ -429,7 +452,7 @@ h1 {
   @include breakpoint(medium980-down) {
     @include font-size-sass(45px);
   }
-  @include breakpoint(medium700-dow) {
+  @include breakpoint(medium700-down) {
     @include font-size-sass(24px);
   }
 }
@@ -510,6 +533,10 @@ hr.short {
   width: 100px;
   border-color: #fff;
   border-width: 1px;
+  @include breakpoint(medium800-down) {
+    width: 40px;
+    margin: 1rem auto;
+  }
 }
 
 .semiBold {
@@ -740,6 +767,12 @@ h5 {
   display: block;
 }
 
+.bx-wrapper img {
+  @include breakpoint(small640-down) {
+    width: 100% !important;
+  }
+}
+
 a.btn.white-btn {
   color: #fff;
   font-weight: 700;
@@ -747,6 +780,10 @@ a.btn.white-btn {
   line-height: 2;
   border: 1px solid #fff;
   padding: 5px 40px;
+  @include breakpoint(small640-down) {
+    @include font-size-sass(14px);
+    line-height: 1.14;
+  }
   /*&::before {
     content: url("./images/playBtn.png");
     font-family: "fontello";
@@ -826,11 +863,7 @@ a.btn.white-btn {
     display: inline-block;
     &.disabled {
       display: inline-block;
-      right: 10px;
       opacity: 0.3;
-    }
-    &.bx-prev {
-      right: 10px;
     }
   }
 }
@@ -847,6 +880,9 @@ a.btn.white-btn {
   margin: 0 auto;
   border-radius: 0;
   padding: 0;
+  @include breakpoint(medium780-down) {
+    margin-bottom: 1.75rem;
+  }
 }
 
 .select2-container--default .select2-selection--single {
@@ -907,7 +943,7 @@ a.foot-link {
 }
 
 .wrap {
-  margin-bottom: 1.5rem;
+  margin-bottom: 4.5rem;
   overflow: hidden;
   @include breakpoint(small568-down) {
     margin-bottom: 0;
@@ -956,7 +992,7 @@ i {
 .social_icon {
   color: #4a4a4a;
   &:hover {
-    color: #ab9767;
+    color: #ba6027;
   }
 }
 
@@ -973,6 +1009,11 @@ a.btn {
     @include breakpoint(medium1100-down) {
       @include font-size-sass(24px);
     }
+    @include breakpoint(small640-down) {
+      @include font-size-sass(17px);
+      letter-spacing: -0.26px;
+      line-height: 1.17;
+    }
   }
   .h2size {
     font-family: $hfont;
@@ -984,6 +1025,11 @@ a.btn {
     @include breakpoint(medium1100-down) {
       @include font-size-sass(32px);
     }
+    @include breakpoint(small640-down) {
+      @include font-size-sass(22px);
+      letter-spacing: 1.19px;
+      line-height: 1.13;
+    }
   }
   &.txtCenter {
     text-align: center;
@@ -994,6 +1040,9 @@ a.btn {
       border-top: 1px solid #4a4a4a;
       width: 5rem;
       margin: 2.125rem auto;
+      @include breakpoint(small640-down) {
+        margin: 1rem auto;
+      }
     }
     .red-border-btn {
       margin: 2rem auto;
@@ -1010,21 +1059,49 @@ a.btn {
     h3 {
       color: #fff;
       @include font-size-sass(50px);
+      @include breakpoint(medium1100-down) {
+        @include font-size-sass(50px);
+      }
+      @include breakpoint(medium880-down) {
+        @include font-size-sass(32px);
+      }
+      @include breakpoint(small640-down) {
+        @include font-size-sass(18px);
+        line-height: 1;
+        letter-spacing: -0.41px;
+      }
+      @include breakpoint(small480-down) {
+        @include font-size-sass(13px);
+      }
     }
     .h2size {
       color: #fff;
       @include font-size-sass(60px);
       text-align: center;
+      @include breakpoint(medium1100-down) {
+        @include font-size-sass(40px);
+      }
+      @include breakpoint(medium880-down) {
+        @include font-size-sass(26px);
+      }
+      @include breakpoint(small640-down) {
+        @include font-size-sass(20px);
+        line-height: 1.3;
+      }
+      @include breakpoint(small480-down) {
+        @include font-size-sass(15px);
+      }
     }
   }
   &.col-tagline {
     position: absolute;
     top: 50%;
-    right: 10%;
+    right: 12%;
     -webkit-transform: translate(6%, -50%);
     -o-transform: translate(6%, -50%);
     transform: translate(6%, -50%);
     text-align: center;
+    max-width: 510px;
     h3 {
       color: #fff;
       font-weight: 300;
@@ -1039,6 +1116,79 @@ a.btn {
       line-height: 1;
       @include font-size-sass(40px);
       text-align: center;
+      @include breakpoint(medium1170-down) {
+        @include font-size-sass(30px);
+      }
+      @include breakpoint(medium950-down) {
+        @include font-size-sass(20px);
+      }
+    }
+    @include breakpoint(medium1170-down) {
+      max-width: 410px;
+      right: 15%;
+    }
+    @include breakpoint(medium1025-down) {
+      max-width: 375px;
+      right: 13%;
+    }
+    @include breakpoint(medium960-down) {
+      max-width: 350px;
+      right: 14%;
+    }
+    @include breakpoint(medium950-down) {
+      -webkit-transform: translate(-8%,-55%);
+      -o-transform: translate(-8%,-55%);
+      transform: translate(-8%,-55%);
+      max-width: 285px;
+      right: 12.5%;
+    }
+    @include breakpoint(medium900-down) {
+      -webkit-transform: translate(-6%,-55%);
+      -o-transform: translate(-6%,-55%);
+      transform: translate(-6%,-55%);
+      max-width: 280px;
+      right: 9%;
+    }
+    @include breakpoint(medium830-down) {
+      -webkit-transform: translate(-3%,-55%);
+      -o-transform: translate(-3%,-55%);
+      transform: translate(-3%,-55%);
+    }
+    @include breakpoint(medium767-down) {
+      -webkit-transform: translate(-4%,-55%);
+      -o-transform: translate(-4%,-55%);
+      transform: translate(-4%,-55%);
+      right: 11%;
+    }
+    @include breakpoint(small640-down) {
+      .h2size {
+        @include font-size-sass(18px);
+        line-height: 1.33;
+      }
+      h3 {
+        line-height: 1;
+        @include font-size-sass(18px);
+      }
+      right: 18%;
+      max-width: 230px;
+    }
+    @include breakpoint(small430-down) {
+      right: 15%;
+    }
+    @include breakpoint(small400-down) {
+      right: 13%;
+    }
+    @include breakpoint(small380-down) {
+      right: 10%;
+    }
+    @include breakpoint(small370-down) {
+      right: 8.5%;
+    }
+    @include breakpoint(small360-down) {
+      right: 6.5%;
+    }
+    @include breakpoint(small340-down) {
+      right: 5.5%;
     }
   }
 }
@@ -1077,7 +1227,8 @@ label {
   }
 }
 
-.wpcf7-text {
+.wpcf7-text,
+.wpcf7-textarea {
   border: 2px solid rgba(74,74,74,0.2);
   border-radius: 3px;
   &.wpcf7-not-valid {
@@ -1106,6 +1257,9 @@ h3 {
 
 .contactus {
   width: 64%;
+  @include breakpoint(small640-down) {
+    width: 100%;
+  }
 }
 
 .bx-wrapper {
@@ -1114,7 +1268,10 @@ h3 {
 
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
-  bottom: 80px;
+  bottom: 20px;
+  @include breakpoint(small640-down) {
+    display: none;
+  }
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a {
@@ -1142,6 +1299,14 @@ h3 {
   &.bx-prev {
     left: 10%;
     right: initial;
+    @include breakpoint(small640-down) {
+      left: 2%;
+    }
+  }
+  &.bx-next {
+    @include breakpoint(small640-down) {
+      right: 2%;
+    }
   }
 }
 
@@ -1153,9 +1318,18 @@ h3 {
   }
 }
 
+.noToponMobile {
+  @include breakpoint(small640-down) {
+    padding: 0 0 2rem 0;
+  }
+}
+
 .vline {
   border-left: 1px solid rgba(151,151,151,0.5);
   height: 90px;
+  @include breakpoint(small640-down) {
+    display: none;
+  }
 }
 
 .section-html.noBottom {
@@ -1171,6 +1345,16 @@ h3 {
   p {
     text-align: left;
   }
+  @include breakpoint(small640-down) {
+    &.section-html .tagline .h2size,
+    &.section-html h3 {
+      text-align: center;
+    }
+    &.section-html .tagline {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  }
 }
 
 .max750 {
@@ -1180,6 +1364,9 @@ h3 {
 
 .section-gallery {
   padding-left: 2rem;
+  @include breakpoint(small640-down) {
+    padding-left: 15px;
+  }
 }
 
 .grid::after {
@@ -1192,6 +1379,10 @@ h3 {
 .grid-item {
   width: 32%;
   //max-width: 380px;
+  @include breakpoint(small640-down) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 .grid-item {
@@ -1203,6 +1394,9 @@ h3 {
 
 .grid-item--width2 {
   width: 64.8%;
+  @include breakpoint(small640-down) {
+    width: 100%;
+  }
   //max-width: 770px;
 }
 
@@ -1252,6 +1446,117 @@ h3 {
 
 hr {
   margin: 1rem -10%;
+}
+
+figcaption {
+  display: none;
+}
+
+figure {
+  a {
+    display: block;
+    height: 100%;
+  }
+}
+
+.fancybox-caption {
+  h3,
+  p {
+    font-family: $default-font;
+    color: #fff;
+  }
+  p {
+    padding: 10px 0;
+  }
+  &::before {
+    top: 0;
+  }
+}
+
+.fancybox-slide--image {
+  padding-bottom: 0 !important;
+}
+
+.fancybox-button--arrow_right {
+  div svg {
+    display: none;
+  }
+  &::before {
+    content: "\e80c";
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1.25rem;
+    margin-right: 0.2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: 0.2em;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include font-size-sass(60px);
+    @include breakpoint(medium1280-down) {
+      @include font-size-sass(30px);
+    }
+    @include breakpoint(medium1100-down) {
+      @include font-size-sass(50px);
+    }
+  }
+}
+
+.fancybox-infobar {
+  span {
+    color: #fff;
+  }
+}
+
+.fancybox-button--arrow_left {
+  div svg {
+    display: none;
+  }
+  &::before {
+    content: "\e80b";
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1.25rem;
+    margin-right: 0.2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: 0.2em;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include font-size-sass(60px);
+    @include breakpoint(medium1280-down) {
+      @include font-size-sass(30px);
+    }
+    @include breakpoint(medium1100-down) {
+      @include font-size-sass(50px);
+    }
+  }
+}
+
+.bx-pager-item:first-of-type:last-of-type {
+  display: none;
+}
+
+.hideHomeLogo {
+  display: none;
+}
+
+.showHomeLogo.forfix {
+  display: block;
 }
 
 /*#imgg1 {

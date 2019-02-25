@@ -11,12 +11,22 @@ a.btn {
   &.red-btn {
     background-color: #ba6027;
     color: #fff;
+    &:hover {
+      background-color: #a9561a;
+    }
   }
   &.red-border-btn {
     background-color: transparent;
     color: #ba6027;
     border: 2px solid #ba6027;
     padding: 0.275rem 1.875rem;
+    &:hover {
+      background-color: #a9561a;
+      color: #fff;
+    }
+  }
+  @include breakpoint(small640-down) {
+    @include font-size-sass(14px);
   }
 }
 
@@ -28,4 +38,7 @@ a.btn {
   background-color: #ba6027;
   border-radius: 3px;
   margin-left: 15px;
+  &:hover {
+    background-color: #a9561a;
+  }
 }

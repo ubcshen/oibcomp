@@ -349,6 +349,10 @@ function build_sections()
             ?>
                 <section class="container section-multi-image-with-content">
                     <div class="container">
+                        <div class="content f<?php echo $textAlignement; ?>">
+                            <?php echo get_sub_field("section_multi_images_with_content_title"); ?>
+                            <?php echo get_sub_field("section_multi_images_with_content_content"); ?>
+                        </div>
                         <div class="multiImages f<?php echo $imageAlignment; ?>">
                           <?php
                             while(has_sub_field('section_multi_images_with_content_images')):
@@ -356,10 +360,6 @@ function build_sections()
                           ?>
                           <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" />
                         <?php endwhile; ?>
-                        </div>
-                        <div class="content f<?php echo $textAlignement; ?>">
-                            <?php echo get_sub_field("section_multi_images_with_content_title"); ?>
-                            <?php echo get_sub_field("section_multi_images_with_content_content"); ?>
                         </div>
                     </div>
                 </section>
@@ -374,12 +374,11 @@ function build_sections()
                             $image = get_sub_field('section_gallery_image');
                           ?>
                             <figure>
-                                <a href="<?php echo $image['url']; ?>" class="fancyboxTitle" data-fancybox="images"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive grid-item <?php if($i==2||$i==8) { echo 'grid-item--width2'; } ?>" id="imgg<?php echo $i; ?>" /></a>
+                                <a href="<?php echo $image['url']; ?>" class="fancyboxTitle" data-fancybox="images"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-fluid img-responsive grid-item <?php if($i==2||$i==8) { echo 'grid-item--width2'; } ?>" id="imgg<?php echo $i; ?>" /></a>
                                 <figcaption>
-                                    <h3><?php echo get_sub_field("section_gallery_image_title"); ?></h3>
-                                    <?php echo get_sub_field("section_gallery_image_desc"); ?>
+                                    <?php echo get_sub_field("section_gallery_desc"); ?>
                                 </figcaption>
-                            <figure>
+                            </figure>
                         <?php $i++; endwhile; ?>
                     </div>
                 </section>
@@ -392,17 +391,19 @@ function build_sections()
                         while(has_sub_field('section_banner_slider')):
                           $image = get_sub_field('section_banner_slider_image');
                       ?>
-                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" />
-                      <?php endwhile; ?>
+                          <div class="slider-content">
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" />
+                            <div class="section-banner-content">
+                                <?php echo get_sub_field("section_banner_slider_content"); ?>
+                            </div>
+                          </div>
+                          <?php endwhile; ?>
                     </div>
-                    <div class="section-banner-content">
-                      <?php echo get_sub_field("section_banner_content"); ?>
-                    </div>
-                    <?php if(get_sub_field("section_banner_search_bar")) { ?>
+                    <!--<?php if(get_sub_field("section_banner_search_bar")) { ?>
                     <div class="section-banner-search">
                       <?php echo get_sub_field("section_banner_search_bar"); ?>
                     </div>
-                    <?php } ?>
+                    <?php } ?>-->
                 </section>
             <?php }
             elseif( get_row_layout() == "section_image_slider" ) // layout: Section Image Slider
@@ -410,12 +411,14 @@ function build_sections()
                 <section class="section-image-slider">
                     <?php echo get_sub_field('section_image_slider_info'); ?>
                     <div class="customize-bxslidercontainer ">
+                        <?php if(!$detect->isMobile()) { ?>
                         <div class="slider-control container ">
                             <?php $i = 0; while(has_sub_field('section_image_slider_content')): $logo = get_sub_field('slider_icon'); $iconName = get_sub_field('slider_icon_title');  ?>
                             <a data-slide-index="<?php echo $i; ?>" class="section-slider-control">
                             <div class="section-tab-content-icon"><?php echo $logo; ?><?php echo $iconName; ?></div></a>
                             <?php $i++; endwhile; ?>
                         </div>
+                        <?php } ?>
                         <div class="img-slider">
                             <?php
                             while(has_sub_field('section_image_slider_content')):
@@ -434,6 +437,7 @@ function build_sections()
             { ?>
                 <section class="section-image-tabs container">
                     <?php echo get_sub_field('section_image_slider_info'); ?>
+                    <?php if(!$detect->isMobile()) { ?>
                     <div class="section-tabs ">
                         <?php
                         while(has_sub_field('tabs')):
@@ -448,6 +452,18 @@ function build_sections()
                             </div>
                         <?php endwhile; ?>
                     </div>
+                    <?php } else { ?>
+                    <select class="section-tab section-tab-select">
+                        <?php
+                        $i = 0;
+                        while(has_sub_field('tabs')):
+                          $tab = get_sub_field('tab');
+                          $tabLink = get_sub_field('tab_link');
+                        ?>
+                        <option data-slide-index="<?php echo $i; ?>" class="section-tab-control" data-slide-link="<?php echo $tabLink; ?>"><?php echo $tab; ?></a>
+                        <?php $i++; endwhile; ?>
+                    </select>
+                    <?php } ?>
                 </section>
             <?php }
             elseif( get_row_layout() == "section_tab_system" ) // layout: Section Tabs
@@ -744,6 +760,31 @@ function build_sections()
                         </div>
                         <?php endwhile; ?>
                       <?php if($className=="lessWidth") { ?></div><?php } ?>
+                    </div>
+                </section>
+            <?php }
+            elseif( get_row_layout() == "section_activities" ) // layout: Section Activities
+            {
+                $className = get_sub_field("section_activities_class");
+                $textAlignment = get_sub_field("section_activities_alignment");
+                $post_objects = get_sub_field("section_activities_container");
+                ?>
+                <section class="section-cols section-cols-3 section-activities <?php echo $className . ' txt' . $textAlignment; ?>">
+                    <div class="cols container">
+                        <?php
+                          if( $post_objects ):
+                          foreach( $post_objects as $post_object):
+                            //setup_postdata($post);
+                            $image = get_field('activity_img', $post_object);
+                            $titile = get_field('activity_title', $post_object);
+                            $colContent = get_field('activity_info', $post_object);
+                        ?>
+                        <div class="colItem inline">
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--3" />
+                            <p><a class="titlea"><?php echo $titile; ?></a></p>
+                            <?php echo $colContent; ?>
+                        </div>
+                        <?php endforeach; wp_reset_postdata(); endif; ?>
                     </div>
                 </section>
             <?php }

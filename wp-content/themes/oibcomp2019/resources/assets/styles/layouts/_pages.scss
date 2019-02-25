@@ -11,6 +11,12 @@
     -o-transform: translate(50%,-50%);
     transform: translate(50%,-50%);
     text-align: center;
+    hr.short {
+      margin: 1rem auto;
+    }
+  }
+  @include breakpoint(small640-down) {
+    margin-bottom: 0;
   }
 }
 
@@ -19,8 +25,12 @@ body:not(.home) {
     .bx-wrapper,
     .bx-viewport,
     .img-slider,
-    .section-imag-content {
-      height: 530px !important; //provide height of slider
+    .section-imag-content,
+    .slider-content {
+      max-height: 480px; //provide height of slider
+      @include breakpoint(medium766-down) {
+        max-height: none;
+      }
     }
   }
 }
@@ -28,6 +38,9 @@ body:not(.home) {
 .section-multi-image-with-content {
   overflow: hidden;
   margin-top: 6rem;
+  @include breakpoint(medium766-down) {
+    margin-top: 3rem;
+  }
   .tagline .h2size {
     text-transform: uppercase;
     line-height: 1;
@@ -37,6 +50,12 @@ body:not(.home) {
     img {
       margin-bottom: 36px;
     }
+    @include breakpoint(medium766-down) {
+      width: 100%;
+      img:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
   .content {
     width: 60%;
@@ -45,6 +64,15 @@ body:not(.home) {
     }
     &.fRight {
       padding-left: 2.5rem;
+    }
+    @include breakpoint(medium766-down) {
+      width: 100%;
+      &.fLeft {
+        padding-right: 0;
+      }
+      &.fRight {
+        padding-left: 0;
+      }
     }
   }
   hr {
@@ -59,6 +87,12 @@ body:not(.home) {
 .section-html {
   overflow: hidden;
   margin-bottom: 3.75rem;
+  @include breakpoint(medium780-down) {
+    margin-bottom: 1.75rem;
+  }
+  @include breakpoint(small640-down) {
+    margin-bottom: 1rem;
+  }
   .tagline .h2size {
     margin-top: 10px;
   }
@@ -88,6 +122,13 @@ body:not(.home) {
   .list-part {
     padding-top: 20px;
   }
+  &.centerTxt {
+    @include breakpoint(small640-down) {
+      .container {
+        padding: 0;
+      }
+    }
+  }
   &.centerTxt .tagline h3 {
     margin-top: 0;
   }
@@ -99,14 +140,62 @@ body:not(.home) {
       &:last-child {
         width: 37%;
       }
+      @include breakpoint(small640-down) {
+        width: 100%;
+        &:last-child {
+          width: 100%;
+        }
+      }
     }
     .inline {
       vertical-align: middle;
       margin-top: 0;
       line-height: 1.1;
+      @include breakpoint(medium950-down) {
+        img {
+          height: 50px;
+          width: auto;
+          display: block;
+          margin: 5px auto;
+        }
+        .inline {
+          @include font-size-sass(19px);
+        }
+      }
+      @include breakpoint(small640-down) {
+        img {
+          width: 50px;
+          height: auto;
+          float: left;
+        }
+      }
+      position: relative;
     }
     h3 {
       margin-left: 3px;
+      @include breakpoint(small640-down) {
+        margin-left: 10%;
+        @include font-size-sass(16px);
+        line-height: 1.25;
+        font-weight: 600;
+        float: left;
+        text-align: left;
+        &.inline {
+          position: absolute;
+          top: 50%;
+          left: 30%;
+          -webkit-transform: translate(0,-50%);
+          -moz-transform: translate(0,-50%);
+          -ms-transform: translate(0,-50%);
+          -o-transform: translate(0,-50%);
+          transform: translate(0,-50%);
+        }
+      }
+    }
+    @include breakpoint(small640-down) {
+      hr {
+        display: none;
+      }
     }
   }
   .activities-container {
@@ -115,24 +204,91 @@ body:not(.home) {
       padding: 10px 0;
       .activity {
         padding: 35px 0;
+        overflow: hidden;
         img {
           vertical-align: middle;
         }
+        h3 {
+          @include font-size-sass(17.6px);
+        }
+        @include breakpoint(small640-down) {
+          padding: 15px 0;
+          img {
+            width: 50px;
+            height: auto;
+            float: left;
+          }
+        }
+        position: relative;
+        h3 {
+          font-family: $default-font;
+          width: calc(100% - 120px);
+          @include breakpoint(medium1025-down) {
+            width: calc(100% - 100px);
+            text-align: left;
+          }
+        }
+        @include breakpoint(medium700-down) {
+          img {
+            width: auto;
+            height: 50px;
+          }
+          h3 {
+            @include font-size-sass(15px);
+          }
+        }
+      }
+      @include breakpoint(medium700-down) {
+        width: 27%;
+      }
+      @include breakpoint(small640-down) {
+        width: 100%;
       }
     }
     .vline {
       height: 500px;
       margin: 0 4% 0 2%;
+      @include breakpoint(medium780-down) {
+        margin: 0 2% 0 1%;
+      }
+      @include breakpoint(small640-down) {
+        display: none;
+      }
     }
     .inline {
       vertical-align: middle;
       margin-top: 0;
       line-height: 1.1;
       margin-left: 10px;
+      @include breakpoint(medium1025-down) {
+        margin-left: 6px;
+      }
+      @include breakpoint(medium780-down) {
+        margin-left: 10px;
+      }
     }
     h3 {
       margin-left: 10px;
       max-width: 250px;
+      @include breakpoint(small640-down) {
+        margin-left: 10%;
+        max-width: none;
+        @include font-size-sass(16px);
+        line-height: 1.25;
+        font-weight: 600;
+        float: left;
+        text-align: left;
+        &.inline {
+          position: absolute;
+          top: 50%;
+          left: 30%;
+          -webkit-transform: translate(0,-50%);
+          -moz-transform: translate(0,-50%);
+          -ms-transform: translate(0,-50%);
+          -o-transform: translate(0,-50%);
+          transform: translate(0,-50%);
+        }
+      }
     }
   }
   &.noMargin {
@@ -146,6 +302,14 @@ body:not(.home) {
     }
     .tagline .h2size {
       margin: 2rem auto;
+    }
+  }
+  @include breakpoint(small640-down) {
+    h3, .tagline .h2size {
+      text-align: left;
+    }
+    .tagline .h2size {
+      margin: 1rem auto;
     }
   }
 }
@@ -182,6 +346,19 @@ body:not(.home) {
       h3 {
         font-weight: 900;
         margin-top: 30px;
+        @include breakpoint(medium830-down) {
+          margin: 10px auto 0;
+        }
+      }
+    }
+  }
+  &.section-activities {
+    @include breakpoint(medium767-down) {
+      .colItem {
+        margin-bottom: 20px;
+      }
+      &.section-cols-3 .colItem:nth-child(2) {
+        margin-bottom: 20px;
       }
     }
   }
@@ -200,6 +377,32 @@ body:not(.home) {
         width: 100%;
         height: auto;
         margin: 20px auto;
+      }
+      h3 {
+        margin-top: 0;
+        &.h2size {
+          margin: 15px auto 5px;
+          @include breakpoint(medium830-down) {
+            margin: 10px auto 0;
+          }
+        }
+      }
+      p {
+        padding-bottom: 0;
+      }
+      @include breakpoint(medium767-down) {
+        width: 100%;
+        max-width: 390px;
+        margin: 0 auto;
+        display: block;
+        overflow: hidden;
+        float: none;
+        img {
+          margin: 10px auto;
+        }
+        &:nth-child(even) {
+          float: none;
+        }
       }
     }
   }
@@ -224,9 +427,31 @@ body:not(.home) {
         }
       }
     }
+    @include breakpoint(small640-down) {
+      display: none;
+    }
   }
 }
 
+.colItem h3 a {
+  font-family: $default-font;
+  font-weight: 700;
+  text-decoration: underline;
+  span {
+    padding: 0 5px;
+  }
+  &:hover {
+    color: #ba6027;
+  }
+}
+
+.slider-muti-btns {
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 96%;
+}
 .section-banner-search {
   background-color: #f2e9d8;
   padding: 30px;
@@ -303,15 +528,29 @@ body:not(.home) {
     padding-top: 4rem;
     margin-top: 6rem;
     img.fLeft {
-      width: 64%;
+      width: 56%;
+      @include breakpoint(medium880-down) {
+        width: 100%;
+      }
+      @include breakpoint(small640-down) {
+        display: none;
+      }
     }
     div.fRight {
-      width: 30%;
+      width: 40%;
+      @include breakpoint(medium880-down) {
+        width: 100%;
+      }
     }
     h2 {
       @include font-size-sass(40px);
       max-width: 260px;
       line-height: 1;
+      @include breakpoint(small640-down) {
+        @include font-size-sass(22px);
+        line-height: 1.13;
+        letter-spacing: 2px;
+      }
     }
     hr.short {
       margin-left: 0;
@@ -324,6 +563,11 @@ body:not(.home) {
     }
     .red-border-btn {
       margin: 20px 0;
+    }
+    @include breakpoint(small640-down) {
+      padding-bottom: 2rem;
+      background-position: 90% top;
+      margin-top: 1rem;
     }
   }
   hr.short {
@@ -342,6 +586,12 @@ body:not(.home) {
   .img-slider,
   .section-imag-content {
     height: 480px !important; //provide height of slider
+    @include breakpoint(small640-down) {
+      height: 220px !important;
+      .section-imag-content {
+        width: 100% !important;
+      }
+    }
   }
   /*.bx-wrapper {
     height: 720px;
@@ -349,6 +599,11 @@ body:not(.home) {
       height: 720px !important;
     }
   }*/
+  .slider-control {
+    @include breakpoint(medium766-down) {
+      display: none;
+    }
+  }
   .section-banner-content {
     position: absolute;
     top: 50%;
@@ -357,6 +612,22 @@ body:not(.home) {
     -o-transform: translate(50%, -50%);
     transform: translate(50%, -50%);
     text-align: center;
+    @include breakpoint(small640-down) {
+      top: 50%;
+      right: 0;
+      -webkit-transform: translate(-10%, -50%);
+      -o-transform: translate(-10%, -50%);
+      transform: translate(-10%, -50%);
+    }
+    @include breakpoint(small480-down) {
+      right: 50%;
+      top: 2%;
+      -webkit-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+      transform: translate(0, 0);
+      width: 280px;
+      margin-right: -140px;
+    }
   }
   .section-slider-control {
     width: 16.2%;
@@ -390,9 +661,12 @@ body:not(.home) {
       }*/
     }
   }
-  .section-banner {
+  /*.section-banner {
     margin-bottom: 180px;
-  }
+    @include breakpoint(small640-down) {
+      margin-bottom: 0;
+    }
+  }*/
   .section-banner .section-banner-content {
     right: 40%;
     -webkit-transform: translate(34%, -50%);
@@ -403,6 +677,11 @@ body:not(.home) {
       -o-transform: translate(30%, -50%);
       transform: translate(30%, -50%);
     }
+    @include breakpoint(small480-down) {
+      -webkit-transform: translate(34%, -50%);
+      -o-transform: translate(34%, -50%);
+      transform: translate(34%, -50%);
+    }
   }
 }
 
@@ -412,14 +691,34 @@ body:not(.home) {
 
 .contact {
   h3 {
-    font-family: $default-font;
     line-height: 1;
   }
   p {
     padding: 5px 0;
   }
-  .fRight p {
-    line-height: 1;
+  .fRight {
+    p {
+      line-height: 1;
+    }
+    h3 {
+      font-family: $default-font;
+      line-height: 1;
+    }
+    border-left: 1px solid rgba(151,151,151,0.3);
+    @include breakpoint(medium1300-down) {
+      padding-left: 2rem;
+    }
+    @include breakpoint(medium1100-down) {
+      padding-left: 1rem;
+    }
+    @include breakpoint(medium1000-down) {
+      border-left: none;
+    }
+  }
+  .section-html .tagline .h2size {
+    @include breakpoint(small640-down) {
+      margin: 1rem 0;
+    }
   }
 }
 
@@ -431,10 +730,23 @@ body:not(.home) {
     vertical-align: top;
     position: relative;
     padding-bottom: 46px;
+    @include breakpoint(medium766-down) {
+      @include font-size-sass(18px);
+      line-height: 1.3;
+      padding-bottom: 0;
+      display: block;
+      width: 100%;
+    }
     .section-tab-content-icon {
       svg {
         max-height: 80px;
         margin-bottom: 20px;
+        @include breakpoint(medium900-down) {
+          max-width: 60px;
+        }
+        @include breakpoint(medium766-down) {
+          display: none;
+        }
       }
       &:hover {
         cursor: pointer;
@@ -468,9 +780,18 @@ body:not(.home) {
       left: 50%;
       margin-left: -17px;
       content: "";
+      @include breakpoint(medium766-down) {
+        display: none;
+      }
     }
   }
 }
+
+/*.section-image-tabs {
+  @include breakpoint(medium766-down) {
+    margin-bottom: 2rem;
+  }
+}*/
 
 .section-tabs {
   text-align: center;
@@ -484,6 +805,12 @@ body:not(.home) {
     .section-tab-content-icon {
       svg {
         max-height: 80px;
+        @include breakpoint(medium900-down) {
+          max-width: 60px;
+        }
+        @include breakpoint(medium766-down) {
+          display: none;
+        }
       }
       &:hover {
         cursor: pointer;
@@ -497,6 +824,9 @@ body:not(.home) {
       font-family: $hfont;
       color: #ab9767;
       line-height: 1.2;
+      @include breakpoint(medium900-down) {
+        @include font-size-sass(13px);
+      }
     }
     &:hover,
     &.section-tab-active {
@@ -521,6 +851,58 @@ body:not(.home) {
       left: 50%;
       margin-left: -17px;
       content: "";
+    }
+  }
+}
+
+.food-wine {
+  .cols {
+    .colItem:nth-child(3) {
+      .col-tagline {
+        right: 18.5%;
+        @include breakpoint(medium1300-down) {
+          right: 15%;
+        }
+        @include breakpoint(medium1170-down) {
+          right: 21%;
+        }
+        @include breakpoint(medium990-down) {
+          right: 21%;
+        }
+        @include breakpoint(medium970-down) {
+          right: 18%;
+        }
+        @include breakpoint(medium950-down) {
+          right: 12%;
+        }
+        @include breakpoint(medium860-down) {
+          right: 10.5%;
+        }
+        @include breakpoint(medium800-down) {
+          right: 8.5%;
+        }
+        @include breakpoint(medium767-down) {
+          right: 11%;
+        }
+        @include breakpoint(small640-down) {
+          right: 18%;
+        }
+        @include breakpoint(small440-down) {
+          right: 16%;
+        }
+        @include breakpoint(small400-down) {
+          right: 13.5%;
+        }
+        @include breakpoint(small380-down) {
+          right: 11%;
+        }
+        @include breakpoint(small370-down) {
+          right: 9%;
+        }
+        @include breakpoint(small340-down) {
+          right: 5.5%;
+        }
+      }
     }
   }
 }
