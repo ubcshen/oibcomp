@@ -768,6 +768,8 @@ function build_sections()
                 $className = get_sub_field("section_activities_class");
                 $textAlignment = get_sub_field("section_activities_alignment");
                 $post_objects = get_sub_field("section_activities_container");
+                $layout = get_sub_field("section_experience_layouts");
+                if($layout == "OtherExperiences") {
                 ?>
                 <section class="section-cols section-cols-3 section-activities <?php echo $className . ' txt' . $textAlignment; ?>">
                     <div class="cols container">
@@ -777,16 +779,57 @@ function build_sections()
                             //setup_postdata($post);
                             $image = get_field('activity_img', $post_object);
                             $titile = get_field('activity_title', $post_object);
+                            $link = get_field('activity_link', $post_object);
                             $colContent = get_field('activity_info', $post_object);
                         ?>
                         <div class="colItem inline">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--3" />
-                            <p><a class="titlea"><?php echo $titile; ?></a></p>
+                            <a href="<?php echo $link; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--3" /></a>
+                            <p><a class="titlea" href="<?php echo $link; ?>"><?php echo $titile; ?></a></p>
                             <?php echo $colContent; ?>
                         </div>
                         <?php endforeach; wp_reset_postdata(); endif; ?>
                     </div>
                 </section>
+                <?php } elseif($layout == "Experiences") { ?>
+                <section class="section-cols section-cols-2 <?php echo $className . ' txt' . $textAlignment; ?>">
+                    <div class="cols container">
+                        <div class="container">
+                            <?php
+                              if( $post_objects ):
+                              foreach( $post_objects as $post_object):
+                                //setup_postdata($post);
+                                $image = get_field('activity_img', $post_object);
+                                $titile = get_field('activity_title', $post_object);
+                                $link = get_field('activity_outlink', $post_object);
+                            ?>
+                            <div class="colItem inline">
+                                <a href="<?php echo $link; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--3" /></a>
+                                <div class="tagline col-tagline"><h3>Experience</h3><h3 class="h2size"><?php echo $titile; ?></h3><p><a class="btn white-btn" href="<?php echo $link; ?>" target="_blank">Explore this experience</a></p></div>
+                            </div>
+                            <?php endforeach; wp_reset_postdata(); endif; ?>
+                        </div>
+                    </div>
+                </section>
+                <?php } else { ?>
+                <section class="section-cols section-cols-3 <?php echo $className . ' txt' . $textAlignment; ?>">
+                    <div class="cols container">
+                        <?php
+                          if( $post_objects ):
+                          foreach( $post_objects as $post_object):
+                            //setup_postdata($post);
+                            $image = get_field('activity_img', $post_object);
+                            $titile = get_field('activity_title', $post_object);
+                            $link = get_field('activity_outlink', $post_object);
+                            $social = get_field('social_info', $post_object);
+                        ?>
+                        <div class="colItem inline">
+                            <a href="<?php echo $link; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--3" /></a>
+                            <h3><?php echo $titile; ?> <span>|</span> <a href="<?php echo $link; ?>" target="_blank" rel="noopener"><?php echo $social; ?></a></h3>
+                        </div>
+                        <?php endforeach; wp_reset_postdata(); endif; ?>
+                    </div>
+                </section>
+                <?php } ?>
             <?php }
             elseif( get_row_layout() == "section_testimonials" ) // layout: Section Testimonials
             { ?>

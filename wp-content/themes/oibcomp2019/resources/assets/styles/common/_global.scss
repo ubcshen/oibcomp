@@ -950,6 +950,13 @@ a.foot-link {
   }
 }
 
+.home .wrap {
+  margin-bottom: 1.5rem;
+  @include breakpoint(small568-down) {
+    margin-bottom: 0;
+  }
+}
+
 body {
   @include breakpoint(small568-down) {
     padding-bottom: 0 !important;
