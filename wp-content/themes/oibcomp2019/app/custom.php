@@ -804,7 +804,7 @@ function build_sections()
                             ?>
                             <div class="colItem inline">
                                 <a href="<?php echo $link; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--3" /></a>
-                                <div class="tagline col-tagline"><h3>Experience</h3><h3 class="h2size"><?php echo $titile; ?></h3><p><a class="btn white-btn" href="<?php echo $link; ?>" target="_blank">Explore this experience</a></p></div>
+                                <div class="tagline col-tagline"><h3>Experience</h3><h3 class="h2size"><?php echo $titile; ?></h3><p><a class="btn white-btn" href="<?php echo $link; ?>" target="_blank">Explore</a></p></div>
                             </div>
                             <?php endforeach; wp_reset_postdata(); endif; ?>
                         </div>
