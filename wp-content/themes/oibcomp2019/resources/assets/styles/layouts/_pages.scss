@@ -833,11 +833,11 @@ body:not(.home) {
       cursor: pointer;
       .section-tab-content-icon {
         .svg_icon {
-          fill: #ba6027;
+          fill: #9e4128;
         }
       }
       .section-tab-content {
-        color: #ba6027;
+        color: #9e4128;
       }
     }
     &.section-tab-active::after {
@@ -845,7 +845,7 @@ body:not(.home) {
       height: 0;
       border-left: 18px solid transparent;
       border-right: 18px solid transparent;
-      border-bottom: 18px solid #ba6027;
+      border-bottom: 18px solid #9e4128;
       position: absolute;
       bottom: 0;
       left: 50%;

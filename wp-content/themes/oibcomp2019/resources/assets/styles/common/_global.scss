@@ -1201,7 +1201,8 @@ a.btn {
   }
 }
 
-.bxslider .tagline.slider-banner {
+.bxslider .tagline.slider-banner,
+.img-slider .tagline.slider-banner {
   display: block;
 }
 
@@ -1327,6 +1328,15 @@ h3 {
   padding: 3.75rem 0;
   hr {
     border-top: 1px solid rgba(151,151,151,0.5);
+    margin: 1rem auto;
+  }
+  &.noToponMobile {
+    padding-top: 0;
+    .tagline {
+      h2 {
+        margin-top: 3rem;
+      }
+    }
   }
 }
 
