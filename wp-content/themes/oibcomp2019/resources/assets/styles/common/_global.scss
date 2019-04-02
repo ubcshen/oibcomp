@@ -1036,6 +1036,7 @@ a.btn {
       @include font-size-sass(22px);
       letter-spacing: 1.19px;
       line-height: 1.13;
+      margin: 0.5rem 0;
     }
   }
   &.txtCenter {
@@ -1199,11 +1200,6 @@ a.btn {
       right: 5.5%;
     }
   }
-}
-
-.bxslider .tagline.slider-banner,
-.img-slider .tagline.slider-banner {
-  display: block;
 }
 
 .red,
@@ -1478,6 +1474,9 @@ figure {
   a {
     display: block;
     height: 100%;
+    img {
+      margin: 0 10px 10px 0;
+    }
   }
 }
 

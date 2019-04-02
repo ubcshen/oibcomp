@@ -19,6 +19,9 @@ export default {
       infiniteLoop: true,
       mode: 'fade',
       touchEnabled: true,
+      onSliderLoad: function() {
+        $(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
+      },
     });
 
     $( 'p:empty' ).remove();
@@ -33,6 +36,9 @@ export default {
         infiniteLoop: true,
         mode: 'fade',
         touchEnabled: true,
+        onSliderLoad: function() {
+          $(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
+        },
       });
       $(".section-tab-select").select2({
         minimumResultsForSearch: -1,

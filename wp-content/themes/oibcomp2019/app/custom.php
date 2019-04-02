@@ -120,9 +120,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 }
 
 if ( function_exists( 'add_image_size' ) ) {
-    add_image_size('news-thumbnail', 390, 240,  array( 'center', 'top' ));
-    add_image_size('member-thumbnail', 780, 780,  array( 'center', 'top' ));
-    add_image_size('member-lightbox-thumbnail', 600, 340,  array( 'center', 'top' ));
+    add_image_size('activity-thumbnail', 559, 314,  array( 'center', 'top' ));
 }
 
 //get primary category name in Wordpress
@@ -399,11 +397,11 @@ function build_sections()
                           </div>
                           <?php endwhile; ?>
                     </div>
-                    <!--<?php if(get_sub_field("section_banner_search_bar")) { ?>
+                    <?php if(get_sub_field("section_banner_search_bar")) { ?>
                     <div class="section-banner-search">
                       <?php echo get_sub_field("section_banner_search_bar"); ?>
                     </div>
-                    <?php } ?>-->
+                    <?php } ?>
                 </section>
             <?php }
             elseif( get_row_layout() == "section_image_slider" ) // layout: Section Image Slider
@@ -745,6 +743,7 @@ function build_sections()
                 $colNo = get_sub_field("col_number"); // only 2 right now
                 $className = get_sub_field("section_cols_class");
                 $textAlignment = get_sub_field("section_text_alignment");
+                $enableOverlay = get_sub_field("enable_dark_overlay_on_image");
                 ?>
                 <section class="section-cols section-cols-<?php echo $colNo; ?> <?php echo $className . ' txt' . $textAlignment; ?>">
                     <div class="cols container">
@@ -755,11 +754,28 @@ function build_sections()
                             $colContent = get_sub_field('col_content');
                         ?>
                         <div class="colItem inline">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--<?php echo $colNo; ?>" />
+                            <img src="<?php echo $image['sizes']['activity-thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--<?php echo $colNo; ?>" />
+                            <div class="overlay">&nbsp;</div>
                             <?php echo $colContent; ?>
                         </div>
                         <?php endwhile; ?>
                       <?php if($className=="lessWidth") { ?></div><?php } ?>
+                    </div>
+                </section>
+            <?php }
+            elseif( get_row_layout() == "section_instagram" ) // layout: Section Instagram
+            {
+                ?>
+                <section class="section-cols section-cols3 floatUp textleft>">
+                    <div class="cols container">
+                        <?php
+                          while(has_sub_field('instagram_accounts')):
+                        ?>
+                        <div class="colItem inline">
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--<?php echo $colNo; ?>" />
+                            <?php echo $colContent; ?>
+                        </div>
+                        <?php endwhile; ?>
                     </div>
                 </section>
             <?php }
@@ -823,7 +839,7 @@ function build_sections()
                             $social = get_field('social_info', $post_object);
                         ?>
                         <div class="colItem inline">
-                            <a href="<?php echo $link; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--3" /></a>
+                            <a href="<?php echo $link; ?>" <?php if($layout == "Instagram") { echo ' target="_blank"'; } ?>><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--3" /></a>
                             <h3><?php echo $titile; ?> <span>|</span> <a href="<?php echo $link; ?>" target="_blank" rel="noopener"><?php echo $social; ?></a></h3>
                         </div>
                         <?php endforeach; wp_reset_postdata(); endif; ?>

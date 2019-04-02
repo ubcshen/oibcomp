@@ -450,7 +450,30 @@ body:not(.home) {
   max-width: 500px;
   margin: 0 auto;
   margin-top: 30px;
-  width: 96%;
+  width: 80%;
+  @include breakpoint(medium1180-down) {
+    width: 90%;
+  }
+  @include breakpoint(medium936-down) {
+    width: 96%;
+    a.btn.white-btn {
+      @include font-size-sass(13px);
+    }
+  }
+  @include breakpoint(medium750-down) {
+    width: 70%;
+    .fLeft,
+    .fRight {
+      float: none;
+      display: block;
+    }
+    .fRight {
+      margin-top: 10px;
+    }
+  }
+  @include breakpoint(small640-down) {
+    width: 100%;
+  }
 }
 .section-banner-search {
   background-color: #f2e9d8;
@@ -906,4 +929,10 @@ body:not(.home) {
     }
   }
 }
+
+//hide search bar on home page
+.section-banner-search {
+  display: none;
+}
+
 
