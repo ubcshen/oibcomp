@@ -9,7 +9,7 @@ export default {
       hideControlOnEnd: true,
       infiniteLoop: true,
       mode: 'fade',
-      touchEnabled: true,
+      touchEnabled: false,
       pagerCustom: '.slider-control',
     });
   },

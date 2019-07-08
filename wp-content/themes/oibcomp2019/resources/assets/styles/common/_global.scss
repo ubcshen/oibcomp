@@ -1105,12 +1105,14 @@ a.btn {
   &.col-tagline {
     position: absolute;
     top: 50%;
-    right: 12%;
-    -webkit-transform: translate(6%, -50%);
+    right: 50%;
+    /*-webkit-transform: translate(6%, -50%);
     -o-transform: translate(6%, -50%);
-    transform: translate(6%, -50%);
+    transform: translate(6%, -50%);*/
     text-align: center;
-    max-width: 510px;
+    //max-width: 510px;
+    width: 100%;
+    padding: 0 20px;
     h3 {
       color: #fff;
       font-weight: 300;
@@ -1132,33 +1134,7 @@ a.btn {
         @include font-size-sass(20px);
       }
     }
-    @include breakpoint(medium1170-down) {
-      max-width: 410px;
-      right: 15%;
-    }
-    @include breakpoint(medium1025-down) {
-      max-width: 375px;
-      right: 13%;
-    }
-    @include breakpoint(medium960-down) {
-      max-width: 350px;
-      right: 14%;
-    }
-    @include breakpoint(medium950-down) {
-      -webkit-transform: translate(-8%,-55%);
-      -o-transform: translate(-8%,-55%);
-      transform: translate(-8%,-55%);
-      max-width: 285px;
-      right: 12.5%;
-    }
-    @include breakpoint(medium900-down) {
-      -webkit-transform: translate(-6%,-55%);
-      -o-transform: translate(-6%,-55%);
-      transform: translate(-6%,-55%);
-      max-width: 280px;
-      right: 9%;
-    }
-    @include breakpoint(medium830-down) {
+    /*@include breakpoint(medium830-down) {
       -webkit-transform: translate(-3%,-55%);
       -o-transform: translate(-3%,-55%);
       transform: translate(-3%,-55%);
@@ -1168,7 +1144,7 @@ a.btn {
       -o-transform: translate(-4%,-55%);
       transform: translate(-4%,-55%);
       right: 11%;
-    }
+    }*/
     @include breakpoint(small640-down) {
       .h2size {
         @include font-size-sass(18px);
@@ -1178,26 +1154,7 @@ a.btn {
         line-height: 1;
         @include font-size-sass(18px);
       }
-      right: 18%;
       max-width: 230px;
-    }
-    @include breakpoint(small430-down) {
-      right: 15%;
-    }
-    @include breakpoint(small400-down) {
-      right: 13%;
-    }
-    @include breakpoint(small380-down) {
-      right: 10%;
-    }
-    @include breakpoint(small370-down) {
-      right: 8.5%;
-    }
-    @include breakpoint(small360-down) {
-      right: 6.5%;
-    }
-    @include breakpoint(small340-down) {
-      right: 5.5%;
     }
   }
 }

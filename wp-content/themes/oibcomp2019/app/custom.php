@@ -755,7 +755,6 @@ function build_sections()
                         ?>
                         <div class="colItem inline">
                             <img src="<?php echo $image['sizes']['activity-thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive col--<?php echo $colNo; ?>" />
-                            <div class="overlay">&nbsp;</div>
                             <?php echo $colContent; ?>
                         </div>
                         <?php endwhile; ?>

@@ -167,6 +167,16 @@ export default {
   },
   finalize() {
     $(window).load(function() {
+      if($(".tagline.col-tagline").length) {
+        $(".tagline.col-tagline").each(function() {
+          var $twidth = $(this).outerWidth();
+          var $theight = $(this).outerHeight();
+          //console.log("dsds");
+          $(this).css("margin-top", -$theight/2);
+          $(this).css("margin-right", -$twidth/2);
+        });
+      }
+
       $('.grid').isotope({
         itemSelector: '.grid-item',
         percentPosition: true,
@@ -176,6 +186,18 @@ export default {
           columnWidth: '.grid-sizer',
         },
       });
+    });
+
+    $( window ).resize(function() {
+      if($(".tagline.col-tagline").length) {
+        $(".tagline.col-tagline").each(function() {
+          var $twidth = $(this).outerWidth();
+          var $theight = $(this).outerHeight();
+          //console.log("dsds");
+          $(this).css("margin-top", -$theight/2);
+          $(this).css("margin-right", -$twidth/2);
+        });
+      }
     });
     // JavaScript to be fired on all pages, after page specific JS is fired
   },
