@@ -1,0 +1,234 @@
+0000.000 (0) Opened log file at time: Tue, 09 Jul 2019 19:04:08 +0000 on http://oibcomp.local
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.15 WP: 5.0.3 PHP: 7.3.1 (apache2handler, Darwin RWAT8G8WP.hitronhub.home 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64) MySQL: 5.7.25 WPLANG: en_US Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 38.7M | 6.5M) multisite: N openssl: OpenSSL 1.0.2o  27 Mar 2018 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.006 (0) Free space on disk containing Updraft's temporary directory: 42612.8 MB
+0000.009 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.016 (0) Semaphore (fd, wp_options) being initialised
+0000.022 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.027 (0) Set semaphore last lock (fd) time to 2019-07-09 19:04:08
+0000.029 (0) Semaphore lock (fd) complete
+0000.032 (0) Backup run: resumption=0, nonce=2edb16eb591e, file_nonce=2edb16eb591e begun at=1562699048 (0s ago), job type=backup
+0000.035 (0) Scheduling a resumption (1) after 300 seconds (1562699348) in case this run gets aborted
+0000.091 (0) Checking if we have a zip executable available
+0000.092 (0) Testing: /usr/bin/zip
+0000.161 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.162 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.163 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.164 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.166 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.227 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.229 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.278 (0) Working binary zip found: /usr/bin/zip
+0000.281 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.282 (0) Creation of backups of directories: beginning
+0000.286 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.617 (0) Total entities for the zip file: 627 directories, 4168 files (0 skipped as non-modified), 60.9 MB
+0000.628 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0000.634 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0000.643 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0000.649 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0000.655 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0000.657 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (3.9 MB, 4168 files batched, 501 (501) added so far); re-opening (prior size: 0 KB)
+0001.734 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: size is now: 1.30 MB
+0001.743 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 600 files added (on-disk size: 1289.6 KB)
+0001.750 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 700 files added (on-disk size: 1289.6 KB)
+0001.757 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 800 files added (on-disk size: 1289.6 KB)
+0001.764 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 900 files added (on-disk size: 1289.6 KB)
+0001.772 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1000 files added (on-disk size: 1289.6 KB)
+0001.773 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (4.1 MB, 4168 files batched, 501 (1002) added so far); re-opening (prior size: 1289.6 KB)
+0002.776 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: size is now: 2.60 MB
+0002.785 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1100 files added (on-disk size: 2671.4 KB)
+0002.791 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1200 files added (on-disk size: 2671.4 KB)
+0002.797 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1300 files added (on-disk size: 2671.4 KB)
+0002.805 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1400 files added (on-disk size: 2671.4 KB)
+0002.812 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1500 files added (on-disk size: 2671.4 KB)
+0002.813 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (5.7 MB, 4168 files batched, 501 (1503) added so far); re-opening (prior size: 2671.4 KB)
+0004.431 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: size is now: 4.60 MB
+0004.439 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1600 files added (on-disk size: 4724.5 KB)
+0004.446 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1700 files added (on-disk size: 4724.5 KB)
+0004.454 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1800 files added (on-disk size: 4724.5 KB)
+0004.460 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 1900 files added (on-disk size: 4724.5 KB)
+0004.466 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2000 files added (on-disk size: 4724.5 KB)
+0004.469 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (21.5 MB, 4168 files batched, 501 (2004) added so far); re-opening (prior size: 4724.5 KB)
+0006.331 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: size is now: 10.60 MB
+0006.340 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2100 files added (on-disk size: 10865.8 KB)
+0006.347 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2200 files added (on-disk size: 10865.8 KB)
+0006.353 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2300 files added (on-disk size: 10865.8 KB)
+0006.361 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2400 files added (on-disk size: 10865.8 KB)
+0006.368 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2500 files added (on-disk size: 10865.8 KB)
+0006.369 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (2.9 MB, 4168 files batched, 501 (2505) added so far); re-opening (prior size: 10865.8 KB)
+0006.781 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2600 files added (on-disk size: 11765.3 KB)
+0006.789 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2700 files added (on-disk size: 11765.3 KB)
+0006.797 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2800 files added (on-disk size: 11765.3 KB)
+0006.805 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 2900 files added (on-disk size: 11765.3 KB)
+0006.812 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3000 files added (on-disk size: 11765.3 KB)
+0006.814 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (3.1 MB, 4168 files batched, 501 (3006) added so far); re-opening (prior size: 11765.3 KB)
+0007.334 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3100 files added (on-disk size: 13539.3 KB)
+0007.340 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3200 files added (on-disk size: 13539.3 KB)
+0007.346 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3300 files added (on-disk size: 13539.3 KB)
+0007.352 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3400 files added (on-disk size: 13539.3 KB)
+0007.358 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3500 files added (on-disk size: 13539.3 KB)
+0007.359 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (16.1 MB, 4168 files batched, 501 (3507) added so far); re-opening (prior size: 13539.3 KB)
+0009.377 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: size is now: 19.30 MB
+0009.392 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3600 files added (on-disk size: 19751.7 KB)
+0009.397 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3700 files added (on-disk size: 19751.7 KB)
+0009.405 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3800 files added (on-disk size: 19751.7 KB)
+0009.410 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 3900 files added (on-disk size: 19751.7 KB)
+0009.416 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 4000 files added (on-disk size: 19751.7 KB)
+0009.418 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (2.8 MB, 4168 files batched, 501 (4008) added so far); re-opening (prior size: 19751.7 KB)
+0010.411 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip.tmp: 4100 files added (on-disk size: 20698.4 KB)
+0011.591 (0) Created plugins zip (0) - 20980.5 KB in 11.3 s (1856.4 KB/s) (sha1: 0500b498d993ea6e09f90b048e5cb6d411124e2d, sha256: edb7d1bfac0846273a3e44cdb25aa02f5f059a8d75b31dba553be5db33dd7922)
+0011.594 (0) Beginning creation of dump of themes (split every: 400 MB)
+0011.874 (0) Total entities for the zip file: 509 directories, 2365 files (0 skipped as non-modified), 70 MB
+0011.882 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0011.885 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25.1 MB, 2365 files batched, 134 (134) added so far); re-opening (prior size: 0 KB)
+0013.070 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: size is now: 4.00 MB
+0013.073 (0) A useful amount of data was added after this amount of zip processing: 2.4 s (normalised: 2.4 s, rate: 10540.2 KB/s)
+0013.079 (0) Performance is good - will increase the amount of data we attempt to batch (time=2.4346120357513, normalised_time=2.4288019564862, max_time=13.077925920486, data points known=1, old_max_bytes=26214400, new_max_bytes=84691132)
+0013.084 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 200 files added (on-disk size: 4125.9 KB)
+0013.091 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 300 files added (on-disk size: 4125.9 KB)
+0013.098 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 400 files added (on-disk size: 4125.9 KB)
+0013.105 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 500 files added (on-disk size: 4125.9 KB)
+0013.112 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 600 files added (on-disk size: 4125.9 KB)
+0013.115 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (34.6 MB, 2365 files batched, 501 (635) added so far); re-opening (prior size: 4125.9 KB)
+0015.499 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: size is now: 17.90 MB
+0015.517 (0) File skipped due to unexpected name mismatch (locale: C): file=/Applications/MAMP/htdocs/oibcomp/wp-content/themes/oibcomp2019/vendor/roots/sage-installer/bin/sage add_as=themes/oibcomp2019/vendor/bin/sage
+0015.519 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 700 files added (on-disk size: 18311.1 KB)
+0015.529 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 800 files added (on-disk size: 18311.1 KB)
+0015.537 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 900 files added (on-disk size: 18311.1 KB)
+0015.546 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1000 files added (on-disk size: 18311.1 KB)
+0015.552 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1100 files added (on-disk size: 18311.1 KB)
+0015.554 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (5.9 MB, 2365 files batched, 501 (1136) added so far); re-opening (prior size: 18311.1 KB)
+0016.461 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1200 files added (on-disk size: 19591.8 KB)
+0016.467 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1300 files added (on-disk size: 19591.8 KB)
+0016.475 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1400 files added (on-disk size: 19591.8 KB)
+0016.482 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1500 files added (on-disk size: 19591.8 KB)
+0016.489 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1600 files added (on-disk size: 19591.8 KB)
+0016.492 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (1.4 MB, 2365 files batched, 501 (1637) added so far); re-opening (prior size: 19591.8 KB)
+0017.749 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1700 files added (on-disk size: 20076.4 KB)
+0017.756 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1800 files added (on-disk size: 20076.4 KB)
+0017.764 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 1900 files added (on-disk size: 20076.4 KB)
+0017.772 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 2000 files added (on-disk size: 20076.4 KB)
+0017.780 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 2100 files added (on-disk size: 20076.4 KB)
+0017.783 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (2.4 MB, 2365 files batched, 501 (2138) added so far); re-opening (prior size: 20076.4 KB)
+0018.708 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 2200 files added (on-disk size: 20867.1 KB)
+0018.715 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip.tmp: 2300 files added (on-disk size: 20867.1 KB)
+0019.672 (0) Created themes zip (0) - 21075.9 KB in 8.1 s (2609.6 KB/s) (sha1: 2ec32d77b7f26ddcd4a4f05b1438a2a44d411bff, sha256: 0f1be2643c1b369e3c55aad3c8aa1b7d91f39103fbd6304836af55fa65fd22a0)
+0019.676 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0019.677 (0) Looking for candidates to backup in: /Applications/MAMP/htdocs/oibcomp/wp-content/uploads
+0019.678 (0) finding files: cache: adding to list (1)
+0019.678 (0) finding files: 2019: adding to list (2)
+0019.679 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0019.722 (0) Total entities for the zip file: 7 directories, 176 files (0 skipped as non-modified), 3.5 MB
+0019.729 (0) Zip: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0020.038 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-uploads.zip.tmp: size is now: 3.40 MB
+0020.155 (0) Created uploads zip (0) - 3450.3 KB in 0.5 s (7266.1 KB/s) (sha1: dd87749b5af3536d2e3b39f221d6e6a6b8e799cf, sha256: 613c444183e32db424b00c069c35fac3d0d6c0bdb81eff933578b381a5381f50)
+0020.159 (0) Beginning backup of other directories found in the content directory (index: 0)
+0020.161 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0020.162 (0) Looking for candidates to backup in: /Applications/MAMP/htdocs/oibcomp/wp-content
+0020.163 (0) finding files: upgrade: skipping: excluded by options
+0020.164 (0) finding files: .DS_Store: adding to list (1)
+0020.165 (0) finding files: index.php: adding to list (2)
+0020.165 (0) finding files: plugins: skipping: this is the plugins directory
+0020.166 (0) finding files: uploads: skipping: this is the uploads directory
+0020.168 (0) finding files: updraft: skipping: this is the updraft directory
+0020.169 (0) finding files: ai1wm-backups: skipping: excluded by options (glob)
+0020.170 (0) finding files: themes: skipping: this is the themes directory
+0020.173 (0) Total entities for the zip file: 0 directories, 2 files (0 skipped as non-modified), 0 MB
+0020.217 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-others.zip.tmp: size is now: 0.00 MB
+0020.226 (0) Created others zip (0) - 1 KB in 0.1 s (18.4 KB/s) (sha1: 2afe7b8f65d1a4c68b192f46ec18c3da49edb6e1, sha256: 702cbd6af0bf049043c0f539066ff394869f9f82b64dd38d89a37d0b06db2713)
+0020.232 (0) Saving backup status to database (elements: 8)
+0020.234 (0) Beginning creation of database dump (WordPress DB)
+0020.303 (0) Table wp_options: Total expected rows (approximate): 251
+0020.371 (0) Table wp_options: Total rows added: 252 in 0.07 seconds
+0020.373 (0) Table wp_options: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_options.table.gz - 139.2 KB)
+0020.402 (0) Table wp_users: Total expected rows (approximate): 0
+0020.404 (0) Table wp_users: Total rows added: 1 in 0.00 seconds
+0020.405 (0) Table wp_users: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_users.table.gz - 0.5 KB)
+0020.421 (0) Table wp_usermeta: Total expected rows (approximate): 23
+0020.423 (0) Table wp_usermeta: Total rows added: 26 in 0.00 seconds
+0020.425 (0) Table wp_usermeta: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_usermeta.table.gz - 2.3 KB)
+0020.436 (0) Table wp_commentmeta: Total expected rows (approximate): 0
+0020.439 (0) Table wp_commentmeta: Total rows added: 0 in 0.00 seconds
+0020.440 (0) Table wp_commentmeta: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_commentmeta.table.gz - 0.4 KB)
+0020.450 (0) Table wp_comments: Total expected rows (approximate): 0
+0020.452 (0) Table wp_comments: Total rows added: 1 in 0.00 seconds
+0020.453 (0) Table wp_comments: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_comments.table.gz - 0.7 KB)
+0020.468 (0) Table wp_links: Total expected rows (approximate): 0
+0020.470 (0) Table wp_links: Total rows added: 0 in 0.00 seconds
+0020.472 (0) Table wp_links: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_links.table.gz - 0.4 KB)
+0020.482 (0) Table wp_postmeta: Total expected rows (approximate): 12010
+0020.939 (0) Table wp_postmeta: Total rows added: 13832 in 0.46 seconds
+0020.947 (0) Table wp_postmeta: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_postmeta.table.gz - 259.6 KB)
+0020.964 (0) Table wp_posts: Total expected rows (approximate): 358
+0020.994 (0) Table wp_posts: Total rows added: 377 in 0.03 seconds
+0020.997 (0) Table wp_posts: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_posts.table.gz - 14.7 KB)
+0021.009 (0) Table wp_term_relationships: Total expected rows (approximate): 17
+0021.012 (0) Table wp_term_relationships: Total rows added: 16 in 0.00 seconds
+0021.013 (0) Table wp_term_relationships: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_term_relationships.table.gz - 0.4 KB)
+0021.022 (0) Table wp_term_taxonomy: Total expected rows (approximate): 0
+0021.024 (0) Table wp_term_taxonomy: Total rows added: 2 in 0.00 seconds
+0021.025 (0) Table wp_term_taxonomy: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_term_taxonomy.table.gz - 0.4 KB)
+0021.043 (0) Table wp_termmeta: Total expected rows (approximate): 0
+0021.045 (0) Table wp_termmeta: Total rows added: 0 in 0.00 seconds
+0021.046 (0) Table wp_termmeta: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_termmeta.table.gz - 0.4 KB)
+0021.056 (0) Table wp_terms: Total expected rows (approximate): 0
+0021.059 (0) Table wp_terms: Total rows added: 2 in 0.00 seconds
+0021.060 (0) Table wp_terms: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_terms.table.gz - 0.4 KB)
+0021.075 (0) Table wp_yoast_seo_links: Total expected rows (approximate): 0
+0021.079 (0) Table wp_yoast_seo_links: Total rows added: 0 in 0.00 seconds
+0021.080 (0) Table wp_yoast_seo_links: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_yoast_seo_links.table.gz - 0.4 KB)
+0021.092 (0) Table wp_yoast_seo_meta: Total expected rows (approximate): 55
+0021.106 (0) Table wp_yoast_seo_meta: Total rows added: 84 in 0.01 seconds
+0021.107 (0) Table wp_yoast_seo_meta: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_yoast_seo_meta.table.gz - 0.6 KB)
+0021.130 (0) Table wp_smush_dir_images: Total expected rows (approximate): 0
+0021.133 (0) Table wp_smush_dir_images: Total rows added: 0 in 0.00 seconds
+0021.134 (0) Table wp_smush_dir_images: finishing file (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_smush_dir_images.table.gz - 0.4 KB)
+0021.153 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_options.table.gz (1/15): adding to final database dump
+0021.218 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_users.table.gz (2/15): adding to final database dump
+0021.224 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_usermeta.table.gz (3/15): adding to final database dump
+0021.238 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_commentmeta.table.gz (4/15): adding to final database dump
+0021.255 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_comments.table.gz (5/15): adding to final database dump
+0021.260 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_links.table.gz (6/15): adding to final database dump
+0021.273 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_postmeta.table.gz (7/15): adding to final database dump
+0021.430 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_posts.table.gz (8/15): adding to final database dump
+0021.441 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_term_relationships.table.gz (9/15): adding to final database dump
+0021.444 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_term_taxonomy.table.gz (10/15): adding to final database dump
+0021.446 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_termmeta.table.gz (11/15): adding to final database dump
+0021.448 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_terms.table.gz (12/15): adding to final database dump
+0021.450 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_yoast_seo_links.table.gz (13/15): adding to final database dump
+0021.452 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_yoast_seo_meta.table.gz (14/15): adding to final database dump
+0021.460 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db-table-wp_smush_dir_images.table.gz (15/15): adding to final database dump
+0021.462 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db.gz: finished writing out complete database file (392 KB)
+0021.493 (0) Total database tables backed up: 15 (backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db.gz, size: 426916, sha256)
+0021.499 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0021.500 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0021.501 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0021.502 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-others.zip: others: This file has not yet been successfully uploaded: will queue
+0021.503 (0) backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db.gz: db: This file has not yet been successfully uploaded: will queue
+0021.504 (0) Saving backup history. Total backup size: 44.8 MB
+0021.508 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0021.511 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0021.512 (0) No remote despatch: user chose no remote backup service
+0021.513 (0) Recording as successfully uploaded: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-plugins.zip
+0021.515 (0) Recording as successfully uploaded: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-themes.zip
+0021.517 (0) Recording as successfully uploaded: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-uploads.zip
+0021.519 (0) Recording as successfully uploaded: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-others.zip
+0021.521 (0) Recording as successfully uploaded: backup_2019-07-09-1904_NkMip_Campground_2edb16eb591e-db.gz
+0021.525 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0021.526 (0) Number of backup sets in history: 1; groups (db): 1
+0021.527 (0) Examining (for databases) backup set with group_id=0, nonce=2edb16eb591e, datestamp=1562699048 (Jul 09 2019 19:04:08)
+0021.528 (0) This backup set is the backup set just made, so will not be deleted.
+0021.528 (0) Number of backup sets in history: 1; groups (files): 1
+0021.529 (0) Examining (for files) backup set with nonce=2edb16eb591e, datestamp=1562699048 (Jul 09 2019 19:04:08)
+0021.529 (0) This backup set is the backup set just made, so will not be deleted.
+0021.530 (0) This backup set is the backup set just made, so will not be deleted.
+0021.530 (0) This backup set is the backup set just made, so will not be deleted.
+0021.530 (0) This backup set is the backup set just made, so will not be deleted.
+0021.531 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0021.531 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0021.535 (0) Resume backup (2edb16eb591e, 0): finish run
+0021.538 (0) Decremented the semaphore (fd) by 1
+0021.539 (0) Semaphore (fd) unlocked
+0021.540 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0021.544 (0) No email will/can be sent - the user has not configured an email address.
+0021.545 (0) The backup apparently succeeded and is now complete

@@ -3,7 +3,7 @@
   @include('partials.head')
   <body @php body_class() @endphp>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4DJGPW"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFWSNDL"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <nav class="hide-desktop">

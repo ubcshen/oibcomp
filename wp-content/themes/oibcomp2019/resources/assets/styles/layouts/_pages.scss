@@ -450,30 +450,7 @@ body:not(.home) {
   max-width: 500px;
   margin: 0 auto;
   margin-top: 30px;
-  width: 80%;
-  @include breakpoint(medium1180-down) {
-    width: 90%;
-  }
-  @include breakpoint(medium936-down) {
-    width: 96%;
-    a.btn.white-btn {
-      @include font-size-sass(13px);
-    }
-  }
-  @include breakpoint(medium750-down) {
-    width: 70%;
-    .fLeft,
-    .fRight {
-      float: none;
-      display: block;
-    }
-    .fRight {
-      margin-top: 10px;
-    }
-  }
-  @include breakpoint(small640-down) {
-    width: 100%;
-  }
+  width: 96%;
 }
 .section-banner-search {
   background-color: #f2e9d8;
@@ -856,11 +833,11 @@ body:not(.home) {
       cursor: pointer;
       .section-tab-content-icon {
         .svg_icon {
-          fill: #9e4128;
+          fill: #ba6027;
         }
       }
       .section-tab-content {
-        color: #9e4128;
+        color: #ba6027;
       }
     }
     &.section-tab-active::after {
@@ -868,7 +845,7 @@ body:not(.home) {
       height: 0;
       border-left: 18px solid transparent;
       border-right: 18px solid transparent;
-      border-bottom: 18px solid #9e4128;
+      border-bottom: 18px solid #ba6027;
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -877,62 +854,3 @@ body:not(.home) {
     }
   }
 }
-
-.food-wine {
-  .cols {
-    .colItem:nth-child(3) {
-      .col-tagline {
-        right: 18.5%;
-        @include breakpoint(medium1300-down) {
-          right: 15%;
-        }
-        @include breakpoint(medium1170-down) {
-          right: 21%;
-        }
-        @include breakpoint(medium990-down) {
-          right: 21%;
-        }
-        @include breakpoint(medium970-down) {
-          right: 18%;
-        }
-        @include breakpoint(medium950-down) {
-          right: 12%;
-        }
-        @include breakpoint(medium860-down) {
-          right: 10.5%;
-        }
-        @include breakpoint(medium800-down) {
-          right: 8.5%;
-        }
-        @include breakpoint(medium767-down) {
-          right: 11%;
-        }
-        @include breakpoint(small640-down) {
-          right: 18%;
-        }
-        @include breakpoint(small440-down) {
-          right: 16%;
-        }
-        @include breakpoint(small400-down) {
-          right: 13.5%;
-        }
-        @include breakpoint(small380-down) {
-          right: 11%;
-        }
-        @include breakpoint(small370-down) {
-          right: 9%;
-        }
-        @include breakpoint(small340-down) {
-          right: 5.5%;
-        }
-      }
-    }
-  }
-}
-
-//hide search bar on home page
-.section-banner-search {
-  display: none;
-}
-
-

@@ -18,7 +18,7 @@ export default {
       hideControlOnEnd: true,
       infiniteLoop: true,
       mode: 'fade',
-      touchEnabled: true,
+      touchEnabled: false,
       onSliderLoad: function() {
         $(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
       },
@@ -35,7 +35,7 @@ export default {
         hideControlOnEnd: true,
         infiniteLoop: true,
         mode: 'fade',
-        touchEnabled: true,
+        touchEnabled: false,
         onSliderLoad: function() {
           $(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
         },
