@@ -11,7 +11,7 @@ export default {
     }
 
     $('.bxslider').bxSlider({
-      adaptiveHeight: false,
+      adaptiveHeight: true,
       controls: true,
       auto: false,
       randomStart: false,
@@ -22,13 +22,16 @@ export default {
       onSliderLoad: function() {
         $(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
       },
+      onSlideAfter: function() {
+        $(".bx-viewport").height($(".bxslider .slider-content:first").height());
+      },
     });
 
     $( 'p:empty' ).remove();
 
     $(window).load(function() {
       $('.bxslider').bxSlider({
-        adaptiveHeight: false,
+        adaptiveHeight: true,
         controls: true,
         auto: false,
         randomStart: false,
@@ -39,6 +42,9 @@ export default {
         onSliderLoad: function() {
           $(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
         },
+        onSlideAfter: function() {
+        $(".bx-viewport").height($(".bxslider .slider-content:first").height());
+      },
       });
       $(".section-tab-select").select2({
         minimumResultsForSearch: -1,

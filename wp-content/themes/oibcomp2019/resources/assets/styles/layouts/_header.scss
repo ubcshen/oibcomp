@@ -17,6 +17,12 @@
     @include breakpoint(medium970-down) {
       max-width: 100px;
       margin-left: 10px;
+      &.homeLogo {
+        display: none;
+      }
+      &.forfix {
+        display: block;
+      }
     }
   }
 }

@@ -316,6 +316,7 @@ function build_sections()
                 $textAlignement = ($imageAlignment == 'Left') ? "Right" : "Left";
                 $image = get_sub_field('section_image');
                 $video = get_sub_field('video_id');
+                $popup_video = get_sub_field('popup_video');
                 $cssImageClass = get_sub_field("section_class");
                 if(preg_match('/\bhasWaveBg\b/',$cssImageClass)) {
                   load_Img(".hasWaveBg", "section_background_image");
@@ -327,9 +328,9 @@ function build_sections()
                         <?php echo get_sub_field("section_content"); ?>
                     </div>
                     <?php if($image) { ?>
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive f<?php echo $imageAlignment; ?>" />
+                    <?php if(($popup_video && $video)) { ?><a href="https://www.youtube.com/embed/<?php echo $video; ?>?autohide=1&loop=1&autoplay=1&controls=0&showinfo=0&rel=0&mute=1" class="fancybox"><?php } ?><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive f<?php echo $imageAlignment; ?>" /><?php if(($popup_video && $video)) { ?></a><?php } ?>
                     <?php } ?>
-                    <?php if($video) { ?>
+                    <?php if($video && !$popup_video) { ?>
                     <div class="f<?php echo $imageAlignment; ?>">
                         <div class="videoWrapper">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>?autohide=1&loop=1&autoplay=1&controls=0&showinfo=0&rel=0&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
