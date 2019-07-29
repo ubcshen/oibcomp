@@ -28,6 +28,7 @@ body:not(.home) {
     .section-imag-content,
     .slider-content {
       max-height: 480px; //provide height of slider
+      overflow: hidden;
       @include breakpoint(medium766-down) {
         max-height: none;
       }

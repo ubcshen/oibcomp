@@ -391,7 +391,7 @@ function build_sections()
                           $image = get_sub_field('section_banner_slider_image');
                       ?>
                           <div class="slider-content">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" />
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>" class="img-responsive" size="" />
                             <div class="section-banner-content">
                                 <?php echo get_sub_field("section_banner_slider_content"); ?>
                             </div>
