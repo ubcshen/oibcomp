@@ -20,9 +20,15 @@ export default {
         infiniteLoop: true,
         mode: 'fade',
         touchEnabled: false,
-        onSliderLoad: function() {
+        onSliderLoad: function(currentIndex) {
+          console.log(currentIndex);
+          //$('.bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner').eq(currentIndex).show();
+          $(this).find('.tagline.slider-banner').show();
+          //$('.img-slider .tagline.slider-banner').show();
+          //console.log($(this).find('.tagline.slider-banner').attr("class"));
           //(".bx-wrapper, .bx-viewport, .bxslider").height($(".bxslider .slider-content:first").height());
-          $(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
+          //$(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
+          //$(currentSlideHtmlObject).show();
           //$(".bx-wrapper, .bx-viewport, .bxslider").height($(".bxslider .slider-content:first").height());
           //$(".bx-viewport").height($(".bxslider .slider-content:first img").height());
         },
@@ -54,7 +60,13 @@ export default {
           mode: 'fade',
           touchEnabled: false,
           onSliderLoad: function() {
-            $(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
+            //$(".bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner").show();
+            //$(currentSlideHtmlObject).show();
+            //console.log($(currentSlideHtmlObject).html())
+            //$('.bxslider .tagline.slider-banner, .img-slider .tagline.slider-banner').eq(currentIndex).show();
+            //$(this).find('.tagline.slider-banner').eq(currentIndex).show();
+            $(this).find('.tagline.slider-banner').show();
+            //$('.img-slider .tagline.slider-banner').show();
             //$(".bx-wrapper, .bx-viewport, .bxslider").height($(".bxslider .slider-content:first").height());
             //$(".bx-viewport").height($(".bxslider .slider-content:first img").height());
           },

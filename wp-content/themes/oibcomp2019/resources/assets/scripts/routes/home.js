@@ -11,6 +11,9 @@ export default {
       mode: 'fade',
       touchEnabled: false,
       pagerCustom: '.slider-control',
+      onSliderLoad: function() {
+        $(this).find('.tagline.slider-banner').show();
+      },
     });
   },
   finalize() {
