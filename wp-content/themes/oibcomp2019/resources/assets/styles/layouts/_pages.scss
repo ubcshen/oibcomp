@@ -105,6 +105,9 @@ body:not(.home) {
     @include breakpoint(medium800-down) {
       width: 100%;
     }
+    @include breakpoint(small640-down) {
+      text-align: center;
+    }
   }
   .fRight {
     padding-left: 4rem;
@@ -306,9 +309,9 @@ body:not(.home) {
     }
   }
   @include breakpoint(small640-down) {
-    h3, .tagline .h2size {
+    /*h3, .tagline .h2size {
       text-align: left;
-    }
+    }*/
     .tagline .h2size {
       margin: 1rem auto;
     }
@@ -551,6 +554,8 @@ body:not(.home) {
         @include font-size-sass(22px);
         line-height: 1.13;
         letter-spacing: 2px;
+        text-align: center;
+        margin: 0 auto;
       }
     }
     hr.short {
@@ -561,6 +566,9 @@ body:not(.home) {
       color: #4a4a4a;
       @include font-size-sass(20px);
       margin-top: 2.125rem;
+      @include breakpoint(small640-down) {
+        text-align: center;
+      }
     }
     .red-border-btn {
       margin: 20px 0;

@@ -537,6 +537,9 @@ hr.short {
     width: 40px;
     margin: 1rem auto;
   }
+  @include breakpoint(small640-down) {
+    margin-left: auto !important;
+  }
 }
 
 .semiBold {
@@ -1008,6 +1011,10 @@ a.btn {
 }
 
 .tagline {
+  @include breakpoint(small640-down) {
+    margin-top: 20px;
+    //text-align: center;
+  }
   h3 {
     font-family: $taglineH3;
     font-weight: 300;
@@ -1020,6 +1027,15 @@ a.btn {
       @include font-size-sass(17px);
       letter-spacing: -0.26px;
       line-height: 1.17;
+      margin-top: 26px;
+      text-align: center;
+    }
+  }
+  h1 {
+    span {
+      @include breakpoint(small640-down) {
+        display: none;
+      }
     }
   }
   .h2size {
@@ -1037,6 +1053,7 @@ a.btn {
       letter-spacing: 1.19px;
       line-height: 1.13;
       margin: 0.5rem 0;
+      text-align: center;
     }
   }
   &.txtCenter {
@@ -1078,6 +1095,7 @@ a.btn {
         @include font-size-sass(18px);
         line-height: 1;
         letter-spacing: -0.41px;
+        margin-top: 0;
       }
       @include breakpoint(small480-down) {
         @include font-size-sass(13px);
@@ -1100,6 +1118,9 @@ a.btn {
       @include breakpoint(small480-down) {
         @include font-size-sass(15px);
       }
+    }
+    @include breakpoint(small640-down) {
+      margin-top: 0;
     }
   }
   &.col-tagline {
@@ -1319,6 +1340,9 @@ h3 {
   }
   p {
     text-align: left;
+    @include breakpoint(small640-down) {
+      text-align: center;
+    }
   }
   @include breakpoint(small640-down) {
     &.section-html .tagline .h2size,

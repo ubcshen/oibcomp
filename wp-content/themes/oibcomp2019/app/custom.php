@@ -459,8 +459,8 @@ function build_sections()
                           $tab = get_sub_field('tab');
                           $tabLink = get_sub_field('tab_link');
                         ?>
-                        <option data-slide-index="<?php echo $i; ?>" class="section-tab-control" data-slide-link="<?php echo $tabLink; ?>"><?php echo $tab; ?></a>
-                        <?php $i++; endwhile; ?>
+                        <option data-slide-index="<?php echo $i; ?>" class="section-tab-control" data-slide-link="<?php echo $tabLink; ?>" value="<?php echo $i; ?>"><?php echo $tab; ?></a>
+                                                <?php $i++; endwhile; ?>"
                     </select>
                     <?php } ?>
                 </section>
